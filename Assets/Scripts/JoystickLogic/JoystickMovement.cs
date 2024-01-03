@@ -23,18 +23,18 @@ public class JoystickMovement : MonoBehaviour
         Vector3 movement = new Vector3(inputHorizontal, 0, inputVertical);
         movementComponent.Move(movement);
 
-        if (movement != Vector3.zero)
-        {
-            CharacterAnimator.SetTrigger("Run");
-        }
-        if (movement == Vector3.zero)
-        {
-            CharacterAnimator.SetTrigger("Idle");
-        }
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            CharacterAnimator.SetTrigger("Hit");
-        }
+        // if (movement != Vector3.zero)
+        // {
+        //     CharacterAnimator.SetTrigger("Run");
+        // }
+        // if (movement == Vector3.zero)
+        // {
+        //     CharacterAnimator.SetTrigger("Idle");
+        // }
+        //
+        // if (Input.GetKeyDown(KeyCode.Space))
+        // {
+        //     CharacterAnimator.SetTrigger("Hit");
+        // }
     }
 }

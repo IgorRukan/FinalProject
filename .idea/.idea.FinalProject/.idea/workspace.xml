@@ -11,9 +11,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Attack/MeleeAttack.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/HealthSystem/HealthBar.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/JoystickLogic/JoystickMovement.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Shoot.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Spawn.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="2a5UInoIVhXOBbQ9CZIZQIycalX" />
   <component name="ProjectViewState">
@@ -23,7 +25,8 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   },
   "keyToStringList": {
     "rider.external.source.directories": [
@@ -80,6 +83,12 @@
       <option name="presentableId" value="Default" />
       <updated>1703607916529</updated>
       <workItem from="1703607939649" duration="9483000" />
+      <workItem from="1703676673615" duration="5862000" />
+      <workItem from="1703692943545" duration="2128000" />
+      <workItem from="1703794397360" duration="2062000" />
+      <workItem from="1704197869522" duration="3563000" />
+      <workItem from="1704281697919" duration="7182000" />
+      <workItem from="1704299960081" duration="7493000" />
     </task>
     <servers />
   </component>
@@ -91,97 +100,145 @@
   <component name="com.github.evgenys91.machinet.common.dslhistory.DslHistoryState">
     <option name="historyDtoById">
       <map>
-        <entry key="06d9fc">
+        <entry key="35ac34">
           <value>
             <ChatHistoryModel>
               <option name="contextFilesPaths">
                 <list>
-                  <option value="$PROJECT_DIR$/Assets/Scripts/HealthSystem/HealthBar.cs" />
+                  <option value="$PROJECT_DIR$/Assets/Scripts/Spawn.cs" />
                 </list>
               </option>
-              <option name="id" value="06d9fc" />
-              <option name="initiateTms" value="1703621738335" />
-              <option name="request" value="но оно не работает" />
+              <option name="id" value="35ac34" />
+              <option name="initiateTms" value="1704303754087" />
+              <option name="request" value="почему не работате coroutine" />
               <option name="response" value="" />
-              <option name="responseDescription" value="Извините за путаницу. Я заметил ошибку в коде. Проблема заключается в том, что вы пытаетесь получить доступ к компоненту `TextMeshProUGUI` через `transform.GetComponent&lt;TextMeshProUGUI&gt;()`, но он не был назначен в инспекторе.&#10;&#10;Чтобы исправить это, вам нужно присвоить компонент `TextMeshProUGUI` в инспекторе или в коде. Давайте внесем изменения в метод `Awake()`:&#10;&#10;```csharp&#10;private void Awake()&#10;{&#10;    camera = Camera.main;&#10;    healthBarFilling = transform.Find(&quot;HealthBar&quot;).GetComponent&lt;Image&gt;();&#10;    healthSystem.ChangeHealth += OnHealthChanged;&#10;    healthValueText = GetComponentInChildren&lt;TextMeshProUGUI&gt;(); // Изменение здесь&#10;}&#10;```&#10;&#10;Теперь, когда мы используем `GetComponentInChildren&lt;TextMeshProUGUI&gt;()`, он будет искать компонент `TextMeshProUGUI` в дочерних объектах.&#10;&#10;Попробуйте внести эти изменения и проверить, работает ли теперь вывод значения переменной в текстовом поле." />
+              <option name="responseDescription" value="Из вашего кода я вижу, что у вас есть метод `Delay()`, который использует `yield return new WaitForSeconds(delaySpawnTime)` для создания задержки. Однако, я не вижу, что бы этот метод был вызван в вашем коде.&#10;&#10;Чтобы запустить корутину `Delay()`, вы должны вызвать ее с помощью метода `StartCoroutine()`. Вот как вы можете изменить ваш код, чтобы корутина начала работать:&#10;&#10;```csharp&#10;private void OnDeath(GameObject target)&#10;{&#10;    spawnObject.gameObject.SetActive(false);&#10;    spawnObject.transform.position = new Vector3(spawnPoint.position.x, spawnObject.transform.position.y, spawnPoint.position.z);&#10;    StartCoroutine(Delay()); // Запуск корутины&#10;    spawnObject.gameObject.SetActive(true);&#10;}&#10;```&#10;&#10;Теперь, когда метод `Delay()` вызывается с помощью `StartCoroutine()`, корутина будет выполняться и создавать задержку, указанную в `delaySpawnTime`. Убедитесь, что значение `delaySpawnTime` больше нуля, чтобы задержка была заметной." />
               <option name="responseFileName" value="" />
               <option name="responseFilePath" value="" />
-              <option name="responseTms" value="1703621741588" />
+              <option name="responseTms" value="1704303757918" />
               <option name="usedFilesPaths">
                 <list>
-                  <option value="$PROJECT_DIR$/Assets/Scripts/HealthSystem/HealthBar.cs" />
+                  <option value="$PROJECT_DIR$/Assets/Scripts/Spawn.cs" />
                 </list>
               </option>
             </ChatHistoryModel>
           </value>
         </entry>
-        <entry key="7663c1">
+        <entry key="67be88">
           <value>
             <ChatHistoryModel>
               <option name="contextFilesPaths">
                 <list>
-                  <option value="$PROJECT_DIR$/Assets/Scripts/HealthSystem/HealthBar.cs" />
+                  <option value="$PROJECT_DIR$/Assets/Scripts/Spawn.cs" />
                 </list>
               </option>
-              <option name="id" value="7663c1" />
-              <option name="initiateTms" value="1703621704373" />
-              <option name="request" value="мне нужно вывести значение переменной в текст" />
+              <option name="id" value="67be88" />
+              <option name="initiateTms" value="1704301032799" />
+              <option name="request" value="как переместить объект в заданную позицию" />
               <option name="response" value="" />
-              <option name="responseDescription" value="Хорошо, чтобы вывести значение переменной в текст, нам понадобится обновить метод `Update()`. Давайте добавим код, который будет обновлять текстовое поле `healthValueText` с текущим значением переменной `healthSystem`.&#10;&#10;```csharp&#10;private void Update()&#10;{&#10;    healthValueText.text = healthSystem.GetCurrentHealth().ToString();&#10;}&#10;```&#10;&#10;Теперь, при каждом обновлении кадра, текстовое поле будет отображать текущее значение переменной `healthSystem`." />
+              <option name="responseDescription" value="Чтобы переместить объект в заданную позицию, вам нужно изменить значение его свойства `transform.position`. В вашем случае, чтобы переместить объект `spawnObject` в позицию `spawnPoint`, вы можете использовать следующий код:&#10;&#10;```csharp&#10;spawnObject.transform.position = spawnPoint.position;&#10;```&#10;&#10;Этот код устанавливает позицию объекта `spawnObject` равной позиции `spawnPoint`. После выполнения этой строки кода, объект будет перемещен в заданную позицию." />
               <option name="responseFileName" value="" />
               <option name="responseFilePath" value="" />
-              <option name="responseTms" value="1703621707426" />
+              <option name="responseTms" value="1704301036788" />
               <option name="usedFilesPaths">
                 <list>
-                  <option value="$PROJECT_DIR$/Assets/Scripts/HealthSystem/HealthBar.cs" />
+                  <option value="$PROJECT_DIR$/Assets/Scripts/Spawn.cs" />
                 </list>
               </option>
             </ChatHistoryModel>
           </value>
         </entry>
-        <entry key="a28398">
+        <entry key="c2dfc7">
           <value>
             <ChatHistoryModel>
               <option name="contextFilesPaths">
                 <list>
-                  <option value="$PROJECT_DIR$/Assets/Scripts/HealthSystem/HealthBar.cs" />
+                  <option value="$PROJECT_DIR$/Assets/Scripts/Spawn.cs" />
                 </list>
               </option>
-              <option name="id" value="a28398" />
-              <option name="initiateTms" value="1703621940404" />
-              <option name="request" value="вот теперь хорошо" />
+              <option name="id" value="c2dfc7" />
+              <option name="initiateTms" value="1704304037530" />
+              <option name="request" value="она не вызывается" />
               <option name="response" value="" />
-              <option name="responseDescription" value="Отлично! Рад, что теперь код работает должным образом. Если у тебя есть еще какие-либо вопросы или что-то еще, с чем я могу помочь, не стесняйся спрашивать." />
+              <option name="responseDescription" value="Приношу извинения за путаницу. Я заметил, что в вашем коде отсутствует вызов метода `StartCoroutine()` для запуска корутины `DelayTime()`. Вот как вы можете изменить ваш код, чтобы корутина начала работать:&#10;&#10;```csharp&#10;private void OnDeath(GameObject target)&#10;{&#10;    spawnObject.gameObject.SetActive(false);&#10;    spawnObject.transform.position = new Vector3(spawnPoint.position.x, spawnObject.transform.position.y, spawnPoint.position.z);&#10;    StartCoroutine(DelayTime()); // Запуск корутины&#10;}&#10;&#10;IEnumerator DelayTime()&#10;{&#10;    Debug.Log(&quot;Delay&quot;);&#10;    yield return new WaitForSeconds(delaySpawnTime);&#10;&#10;    spawnObject.gameObject.SetActive(true);&#10;}&#10;```&#10;&#10;Теперь, когда метод `DelayTime()` вызывается с помощью `StartCoroutine()`, корутина будет выполняться и создавать задержку, указанную в `delaySpawnTime`. Убедитесь, что значение `delaySpawnTime` больше нуля, чтобы задержка была заметной." />
               <option name="responseFileName" value="" />
               <option name="responseFilePath" value="" />
-              <option name="responseTms" value="1703621942100" />
+              <option name="responseTms" value="1704304040536" />
               <option name="usedFilesPaths">
                 <list>
-                  <option value="$PROJECT_DIR$/Assets/Scripts/HealthSystem/HealthBar.cs" />
+                  <option value="$PROJECT_DIR$/Assets/Scripts/Spawn.cs" />
                 </list>
               </option>
             </ChatHistoryModel>
           </value>
         </entry>
-        <entry key="f31a36">
+        <entry key="c6ba3d">
           <value>
             <ChatHistoryModel>
               <option name="contextFilesPaths">
                 <list>
-                  <option value="$PROJECT_DIR$/Assets/Scripts/HealthSystem/HealthBar.cs" />
+                  <option value="$PROJECT_DIR$/Assets/Scripts/Spawn.cs" />
                 </list>
               </option>
-              <option name="id" value="f31a36" />
-              <option name="initiateTms" value="1703621687935" />
-              <option name="request" value="ладно, давай начнем сначала" />
+              <option name="id" value="c6ba3d" />
+              <option name="initiateTms" value="1704303885224" />
+              <option name="request" value="но у меня есть вызов метода" />
               <option name="response" value="" />
-              <option name="responseDescription" value="Хорошо, давай начнем сначала. Что ты хотел бы изменить или улучшить в файле &quot;HealthBar.cs&quot;?" />
+              <option name="responseDescription" value="Извините за недоразумение. В вашем коде я вижу вызов метода `StartCoroutine(DelayTime())`, который должен запускать корутину `DelayTime()`. Однако, я заметил, что в вашем коде отсутствует блок кода, который должен выполняться после задержки.&#10;&#10;Чтобы корутина работала должным образом, вам нужно добавить код, который должен выполняться после задержки, внутри блока `yield return new WaitForSeconds(delaySpawnTime)`. Вот пример, как вы можете изменить ваш код:&#10;&#10;```csharp&#10;IEnumerator DelayTime()&#10;{&#10;    Debug.Log(&quot;Delay&quot;);&#10;    yield return new WaitForSeconds(delaySpawnTime);&#10;&#10;    // Код, который должен выполняться после задержки&#10;    spawnObject.gameObject.SetActive(true);&#10;    // spawnObject.GetComponent&lt;HealthSystem&gt;().Death -= OnDeath;&#10;}&#10;```&#10;&#10;Теперь, после задержки, код внутри блока `yield return new WaitForSeconds(delaySpawnTime)` будет выполнен. Убедитесь, что значение `delaySpawnTime` больше нуля, чтобы задержка была заметной." />
               <option name="responseFileName" value="" />
               <option name="responseFilePath" value="" />
-              <option name="responseTms" value="1703621690141" />
+              <option name="responseTms" value="1704303891333" />
               <option name="usedFilesPaths">
                 <list>
-                  <option value="$PROJECT_DIR$/Assets/Scripts/HealthSystem/HealthBar.cs" />
+                  <option value="$PROJECT_DIR$/Assets/Scripts/Spawn.cs" />
+                </list>
+              </option>
+            </ChatHistoryModel>
+          </value>
+        </entry>
+        <entry key="d1a729">
+          <value>
+            <ChatHistoryModel>
+              <option name="contextFilesPaths">
+                <list>
+                  <option value="$PROJECT_DIR$/Assets/Scripts/Spawn.cs" />
+                </list>
+              </option>
+              <option name="id" value="d1a729" />
+              <option name="initiateTms" value="1704303977653" />
+              <option name="request" value="оно не вызывается" />
+              <option name="response" value="" />
+              <option name="responseDescription" value="Приношу извинения за путаницу. Я заметил, что в вашем коде отсутствует вызов метода `StartCoroutine()` для запуска корутины `DelayTime()`. Вот как вы можете изменить ваш код, чтобы корутина начала работать:&#10;&#10;```csharp&#10;private void OnDeath(GameObject target)&#10;{&#10;    spawnObject.gameObject.SetActive(false);&#10;    spawnObject.transform.position = new Vector3(spawnPoint.position.x, spawnObject.transform.position.y, spawnPoint.position.z);&#10;    StartCoroutine(DelayTime()); // Запуск корутины&#10;}&#10;&#10;IEnumerator DelayTime()&#10;{&#10;    Debug.Log(&quot;Delay&quot;);&#10;    yield return new WaitForSeconds(delaySpawnTime);&#10;&#10;    spawnObject.gameObject.SetActive(true);&#10;}&#10;```&#10;&#10;Теперь, когда метод `DelayTime()` вызывается с помощью `StartCoroutine()`, корутина будет выполняться и создавать задержку, указанную в `delaySpawnTime`. Убедитесь, что значение `delaySpawnTime` больше нуля, чтобы задержка была заметной." />
+              <option name="responseFileName" value="" />
+              <option name="responseFilePath" value="" />
+              <option name="responseTms" value="1704303980765" />
+              <option name="usedFilesPaths">
+                <list>
+                  <option value="$PROJECT_DIR$/Assets/Scripts/Spawn.cs" />
+                </list>
+              </option>
+            </ChatHistoryModel>
+          </value>
+        </entry>
+        <entry key="d96910">
+          <value>
+            <ChatHistoryModel>
+              <option name="contextFilesPaths">
+                <list>
+                  <option value="$PROJECT_DIR$/Assets/Scripts/Spawn.cs" />
+                </list>
+              </option>
+              <option name="id" value="d96910" />
+              <option name="initiateTms" value="1704303855054" />
+              <option name="request" value="не вызывается" />
+              <option name="response" value="" />
+              <option name="responseDescription" value="Извините за путаницу. Я заметил, что в вашем коде отсутствует вызов метода `StartCoroutine()` для запуска корутины `DelayTime()`. Вот как вы можете изменить ваш код, чтобы корутина начала работать:&#10;&#10;```csharp&#10;private void OnDeath(GameObject target)&#10;{&#10;    spawnObject.gameObject.SetActive(false);&#10;    spawnObject.transform.position = new Vector3(spawnPoint.position.x, spawnObject.transform.position.y, spawnPoint.position.z);&#10;    StartCoroutine(DelayTime()); // Запуск корутины&#10;    spawnObject.gameObject.SetActive(true);&#10;}&#10;```&#10;&#10;Теперь, когда метод `DelayTime()` вызывается с помощью `StartCoroutine()`, корутина будет выполняться и создавать задержку, указанную в `delaySpawnTime`. Убедитесь, что значение `delaySpawnTime` больше нуля, чтобы задержка была заметной." />
+              <option name="responseFileName" value="" />
+              <option name="responseFilePath" value="" />
+              <option name="responseTms" value="1704303859681" />
+              <option name="usedFilesPaths">
+                <list>
+                  <option value="$PROJECT_DIR$/Assets/Scripts/Spawn.cs" />
                 </list>
               </option>
             </ChatHistoryModel>

@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class HealthSystem : MonoBehaviour
@@ -10,9 +11,11 @@ public class HealthSystem : MonoBehaviour
 
     private float time;
 
+    private float currentHealthPercentage;
+
     public event Action <GameObject> Death;
 
-    public event Action<float,float> ChangeHealth; 
+    public event Action<float> ChangeHealth; 
 
     private void Start()
     {
@@ -43,14 +46,20 @@ public class HealthSystem : MonoBehaviour
     {
         currentHealth += value;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+        ChangeHealthIv();
     }
 
     public void GetDamage(float value)
     {
         currentHealth -= value;
         CheckIsDead();
-        float currentHealthPercentage = currentHealth / maxHealth;
-        ChangeHealth?.Invoke(currentHealthPercentage,currentHealth);
+        ChangeHealthIv();
+    }
+
+    private void ChangeHealthIv()
+    {
+        currentHealthPercentage = currentHealth / maxHealth;
+        ChangeHealth?.Invoke(currentHealthPercentage);
     }
 
     public void OnRevival()

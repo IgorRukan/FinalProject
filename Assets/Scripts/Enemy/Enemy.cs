@@ -28,12 +28,6 @@ public class Enemy : DamageableObject
     {
         mc = GetComponent<MovementComponent>();
         healthSystem = GetComponent<HealthSystem>();
-        healthSystem.Death += OnEnemyDeath;
-    }
-
-    private void OnEnemyDeath(GameObject gameObject)
-    {
-        Destroy(gameObject);
     }
 
     protected virtual void Start()
@@ -71,10 +65,6 @@ public class Enemy : DamageableObject
         yield return new WaitForSeconds(stopTime);
         pause = false;
         StartCoroutine(Moving());
-    }
-
-    protected virtual void OnCollisionEnter(Collision collision)
-    {
     }
 
     public override HealthSystem GetHealthSystem()

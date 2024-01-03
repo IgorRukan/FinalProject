@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: -2158951401742185297}
   - component: {fileID: 8625006944367508082}
   - component: {fileID: 7024552066695039531}
+  - component: {fileID: 1340146846524226945}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -179,8 +180,8 @@ MonoBehaviour:
   targetMask:
     serializedVersion: 2
     m_Bits: 256
-  smallDistance: 3
-  bigDistance: 5
+  smallDistance: 10
+  bigDistance: 12
   SearchRadius: 15
   closestObj: {fileID: 0}
   targets: []
@@ -211,7 +212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf032ab22f12e4898a2ef822a85c6316, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 10000
   currentHealth: 0
   AutoHealPeriod: -1
   AutoHealValue: 0
@@ -282,9 +283,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d0f31225be4b1499d8f34f065a2f83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 0}
-  ShootingRate: 0
+  bullet: {fileID: 8620254603858736873, guid: 965a3629e204616458083ab3714cb802, type: 3}
+  ShootingRate: 0.3
   pc: {fileID: 0}
+  inRange: 0
+--- !u!114 &1340146846524226945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4011377109359908596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 153d495ae72475b4090d61622adab9ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  strength: 1000
+  agility: 0
+  intelligence: 0
+  armor: 0
+  lifesteal: 0
+  speed: 0
+  attackRange: 0
+  attackSpeed: 0
+  regemHP: 0
+  maxHP: 0
+  crit: 0
+  critChance: 0
+  bonusExp: 0
 --- !u!1001 &4352972152239224511
 PrefabInstance:
   m_ObjectHideFlags: 0
