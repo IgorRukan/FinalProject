@@ -11,31 +11,35 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Animation/Animations.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Attack/MeleeAttack.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/HealthSystem/HealthBar.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/JoystickLogic/JoystickMovement.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MineObjects.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Spawn.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/TreeMine.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/db6cea5b3c9142648edbd2386e71c20a3c00/5f/9ea455cf/NativeInputSystem.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="2a5UInoIVhXOBbQ9CZIZQIycalX" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "C:\\Users\\vasya\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\DecompilerCache",
-      "C:\\Users\\vasya\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\SourcesCache",
-      "C:\\Users\\vasya\\AppData\\Local\\Symbols\\src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\vasya\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\vasya\\AppData\\Roaming\\JetBrains\\Rider2023.1\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\vasya\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.15f1\Editor\Unity.exe" />
@@ -89,6 +93,10 @@
       <workItem from="1704197869522" duration="3563000" />
       <workItem from="1704281697919" duration="7182000" />
       <workItem from="1704299960081" duration="7493000" />
+      <workItem from="1704458807678" duration="7643000" />
+      <workItem from="1704550841272" duration="2093000" />
+      <workItem from="1704819891412" duration="7987000" />
+      <workItem from="1704884944896" duration="7788000" />
     </task>
     <servers />
   </component>
@@ -148,6 +156,30 @@
             </ChatHistoryModel>
           </value>
         </entry>
+        <entry key="a8947c">
+          <value>
+            <ChatHistoryModel>
+              <option name="contextFilesPaths">
+                <list>
+                  <option value="$PROJECT_DIR$/Assets/TreeMine.cs" />
+                </list>
+              </option>
+              <option name="id" value="a8947c" />
+              <option name="initiateTms" value="1704477341656" />
+              <option name="request" value="можешь помочь с этой ошибкой UnityEngine.SetupCoroutine.InvokeMoveNext (System.Collections.IEnumerator enumerator, System.IntPtr returnValueAddress) (at &lt;5879d8d225474494bcffdfe64965038e&gt;:0)&#10;UnityEngine.MonoBehaviour:StartCoroutine(IEnumerator)" />
+              <option name="response" value="" />
+              <option name="responseDescription" value="Ошибка `UnityEngine.SetupCoroutine.InvokeMoveNext` обычно возникает, когда пытаетесь запустить корутину, но передаете неверный объект или метод в `StartCoroutine()`. Вот несколько возможных причин и решений для этой ошибки:&#10;&#10;1. Убедитесь, что вы передаете правильный объект и метод в `StartCoroutine()`. Убедитесь, что метод, который вы хотите запустить как корутину, имеет правильную сигнатуру и возвращает `IEnumerator`. Например:&#10;&#10;```csharp&#10;StartCoroutine(DelayTime()); // Правильный вызов корутины&#10;```&#10;&#10;2. Проверьте, что объект, на котором вызывается `StartCoroutine()`, является наследником класса `MonoBehaviour`. Корутины могут быть запущены только на объектах, которые наследуют `MonoBehaviour`.&#10;&#10;3. Убедитесь, что вы не пытаетесь запустить корутину из статического метода. Корутины могут быть запущены только из экземпляра класса `MonoBehaviour`.&#10;&#10;4. Если вы используете `yield return StartCoroutine()` внутри другой корутины, убедитесь, что вы правильно передаете объект и метод во внутреннем вызове `StartCoroutine()`. Например:&#10;&#10;```csharp&#10;yield return StartCoroutine(OtherCoroutine()); // Правильный вызов внутренней корутины&#10;```&#10;&#10;Если проблема не решена после проверки этих пунктов, пожалуйста, предоставьте больше информации о вашем коде и контексте, чтобы я мог помочь вам более точно." />
+              <option name="responseFileName" value="" />
+              <option name="responseFilePath" value="" />
+              <option name="responseTms" value="1704477347087" />
+              <option name="usedFilesPaths">
+                <list>
+                  <option value="$PROJECT_DIR$/Assets/TreeMine.cs" />
+                </list>
+              </option>
+            </ChatHistoryModel>
+          </value>
+        </entry>
         <entry key="c2dfc7">
           <value>
             <ChatHistoryModel>
@@ -191,6 +223,30 @@
               <option name="usedFilesPaths">
                 <list>
                   <option value="$PROJECT_DIR$/Assets/Scripts/Spawn.cs" />
+                </list>
+              </option>
+            </ChatHistoryModel>
+          </value>
+        </entry>
+        <entry key="c86fac">
+          <value>
+            <ChatHistoryModel>
+              <option name="contextFilesPaths">
+                <list>
+                  <option value="$PROJECT_DIR$/Assets/Scripts/Player/Stats.cs" />
+                </list>
+              </option>
+              <option name="id" value="c86fac" />
+              <option name="initiateTms" value="1704461701653" />
+              <option name="request" value="как мне сделать метод для добавления любого из параметров в одном методе?" />
+              <option name="response" value="" />
+              <option name="responseDescription" value="Вы можете создать универсальный метод для добавления значений к любому из параметров, используя рефлексию в C#. Вот пример, как это можно сделать:&#10;&#10;```csharp&#10;public void AddStat(string statName, float value)&#10;{&#10;    // Получаем информацию о поле с заданным именем&#10;    var field = GetType().GetField(statName);&#10;&#10;    // Проверяем, что поле существует и является типом float&#10;    if (field != null &amp;&amp; field.FieldType == typeof(float))&#10;    {&#10;        // Получаем текущее значение поля&#10;        var currentValue = (float)field.GetValue(this);&#10;&#10;        // Добавляем значение к текущему значению&#10;        var newValue = currentValue + value;&#10;&#10;        // Устанавливаем новое значение поля&#10;        field.SetValue(this, newValue);&#10;    }&#10;    else&#10;    {&#10;        Debug.LogError(&quot;Invalid stat name or type: &quot; + statName);&#10;    }&#10;}&#10;```&#10;&#10;Теперь вы можете вызывать метод `AddStat()` и передавать имя параметра и значение, которое вы хотите добавить. Например:&#10;&#10;```csharp&#10;AddStat(&quot;strength&quot;, 10f); // Добавить 10 к параметру strength&#10;AddStat(&quot;agility&quot;, -5f); // Вычесть 5 из параметра agility&#10;```&#10;&#10;Обратите внимание, что имя параметра должно точно соответствовать имени поля в классе `Stats`, иначе будет выдана ошибка." />
+              <option name="responseFileName" value="" />
+              <option name="responseFilePath" value="" />
+              <option name="responseTms" value="1704461711124" />
+              <option name="usedFilesPaths">
+                <list>
+                  <option value="$PROJECT_DIR$/Assets/Scripts/Player/Stats.cs" />
                 </list>
               </option>
             </ChatHistoryModel>

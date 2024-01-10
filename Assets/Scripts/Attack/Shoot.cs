@@ -7,8 +7,9 @@ public class Shoot : MonoBehaviour
     public float ShootingRate;
     public PerceptionComponent pc;
 
-    private DamageableObject target;
+    public DamageableObject target;
     private float time;
+    public Transform shootPos;
 
     public bool inRange;
 
@@ -19,17 +20,20 @@ public class Shoot : MonoBehaviour
 
     public void Shooting()
     {
-        target = pc.GetTarget();
         if (target == null)
+        {
             return;
-    
+        }
+
+        //shootPos.transform.position
         var position = transform.position;
         Vector3 dir = target.transform.position - position;
+        Debug.Log(position + " " + target.transform.position);
         Quaternion rotation = Quaternion.LookRotation(dir, Vector3.up);
 
         Instantiate(bullet, position, rotation);
     }
-    
+
     private void IsInRange()
     {
         if (target == null)
@@ -49,11 +53,20 @@ public class Shoot : MonoBehaviour
     {
         target = pc.GetTarget();
         IsInRange();
+        if (target == null)
+        {
+            GetComponent<Animations>().AttackAnimation(false);
+            return;
+        }
+
+        GetComponent<Animations>().AttackAnimation(true);
+        
         time += Time.deltaTime;
         if (time > ShootingRate)
         {
             Shooting();
             time -= ShootingRate;
         }
+        //transform.LookAt(target.transform);
     }
 }

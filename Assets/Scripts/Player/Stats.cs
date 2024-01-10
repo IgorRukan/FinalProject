@@ -16,9 +16,31 @@ public class Stats : MonoBehaviour
     public float crit;
     public float critChance;
     public float bonusExp;
+    public float axeDamage;
+    public float axeSpeed;
+    public float pickaxeDamage;
+    public float pickaxeSpeed;
+    
+    public float wood;
 
-    private void Start()
+    public bool isMinening = false;
+
+
+    public void AddStat(string statName,float value)
     {
-        
+        var field = GetType().GetField(statName);
+
+        if (field != null && field.FieldType == typeof(float))
+        {
+            var currentValue = (float)field.GetValue(this);
+
+            var newValue = currentValue + value;
+
+            field.SetValue(this, newValue);
+        }
+        else
+        {
+            Debug.LogError("Invalid stat name or type: " + statName);
+        }
     }
 }

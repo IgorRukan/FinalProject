@@ -42,6 +42,11 @@ public class HealthSystem : MonoBehaviour
         AutoHealValue = value;
     }
 
+    public void FullRestore()
+    {
+        currentHealth = maxHealth;
+    }
+
     public void AddHealth(float value)
     {
         currentHealth += value;
