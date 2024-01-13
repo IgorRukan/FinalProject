@@ -5,21 +5,24 @@ using UnityEngine.Serialization;
 public class FightAI : MonoBehaviour
 {
     
-    public GameObject target;
+    public DamageableObject target;
     private MovementComponent mc;
+
+    private Animations animations;
 
     private void Start()
     {
         mc = GetComponent<MovementComponent>();
+        animations = GetComponent<Animations>();
     }
 
     private void Update()
     {
-        if (target.Equals(null))
+        target = GetComponent<PerceptionComponent>().GetTarget();
+        if (target == null)
         {
             return;
         }
-        target = GetComponent<PerceptionComponent>().GetTarget().gameObject;
         Fight();
     }
 
@@ -28,15 +31,23 @@ public class FightAI : MonoBehaviour
         Attack(target);
     }
 
-    private void Attack(GameObject opponent1)
+    private void Attack(DamageableObject opponent1)
     {
+        Vector3 direction;
         if (!GetComponent<Shoot>().inRange)
         {
-            Vector3 direction = opponent1.transform.position - transform.position;
+            direction = opponent1.transform.position - transform.position;
 
             direction.Normalize();
             
             GetComponent<MovementComponent>().Move(direction);
+            
+            animations.SetMovement(direction);
+        }
+        else
+        {
+            direction = new Vector3(0, 0, 0);
+            animations.SetMovement(direction);
         }
 
         transform.LookAt(opponent1.transform);

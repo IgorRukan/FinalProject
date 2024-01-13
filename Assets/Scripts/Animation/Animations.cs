@@ -37,13 +37,11 @@ public class Animations : MonoBehaviour
     
     public void AttackAnimation(bool attackState)
     {
-        if (attackState)
-        {
-            animator.SetTrigger("Attack");
-        }
-        else
-        {
-            animator.SetTrigger("StopAttack");
-        }
+        animator.SetTrigger(attackState ? "Attack" : "StopAttack");
+    }
+
+    public void MineTreeAnimation(bool mineState)
+    {
+        animator.SetTrigger(mineState ? "MineTree" : "StopMining");
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class MineObjects : DamageableObject
 {
-    private HealthSystem hs;
+    public HealthSystem hs;
 
     private void Start()
     {

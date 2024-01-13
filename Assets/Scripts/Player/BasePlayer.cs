@@ -24,7 +24,7 @@ public class BasePlayer : DamageableObject
         input.Player.Move.performed += Move_performed;
         input.Player.Move.canceled += Move_canceled;
 
-        animations = GetComponent<Animations>();
+        //animations = GetComponent<Animations>();
     }
 
     private void Move_canceled(InputAction.CallbackContext context)
@@ -40,9 +40,13 @@ public class BasePlayer : DamageableObject
 
     private void Update()
     {
-        //movementComponent.Move(movement);
-        //animations.SetMovement(movement);
-       // transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(movement), Time.deltaTime*rotateSpeed);
+        // movementComponent.Move(movement);
+        // animations.SetMovement(movement);
+        // if (Mathf.Abs(movement.magnitude) > 0.05f)
+        // {
+        //     transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(movement),
+        //         Time.deltaTime * rotateSpeed);
+        // }
     }
 
     public override HealthSystem GetHealthSystem()

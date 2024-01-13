@@ -13,9 +13,12 @@ public class Shoot : MonoBehaviour
 
     public bool inRange;
 
+    private Animations animations;
+
     private void Start()
     {
         pc = GetComponent<PerceptionComponent>();
+        animations = GetComponent<Animations>();
     }
 
     public void Shooting()
@@ -28,7 +31,6 @@ public class Shoot : MonoBehaviour
         //shootPos.transform.position
         var position = transform.position;
         Vector3 dir = target.transform.position - position;
-        Debug.Log(position + " " + target.transform.position);
         Quaternion rotation = Quaternion.LookRotation(dir, Vector3.up);
 
         Instantiate(bullet, position, rotation);
@@ -59,14 +61,23 @@ public class Shoot : MonoBehaviour
             return;
         }
 
-        GetComponent<Animations>().AttackAnimation(true);
-        
         time += Time.deltaTime;
-        if (time > ShootingRate)
+
+        if (animations.movement == Vector3.zero)
         {
-            Shooting();
-            time -= ShootingRate;
+            GetComponent<Animations>().AttackAnimation(true);
+            //Debug.Break();
+
+            if (time > ShootingRate)
+            {
+                Shooting();
+                transform.LookAt(target.transform);
+                time -= ShootingRate;
+            }
         }
-        //transform.LookAt(target.transform);
+        else
+        {
+            GetComponent<Animations>().AttackAnimation(false);
+        }
     }
 }

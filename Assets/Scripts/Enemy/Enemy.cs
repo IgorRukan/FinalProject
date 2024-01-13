@@ -10,7 +10,7 @@ public class Enemy : DamageableObject
     [Header("Сколько идет")] public float movementTime = 3f;
     [Header("Сколько стоит")] public float stopTime = 2f;
 
-    private Vector3 moveVector;
+    private Vector3 movement;
     
     [Header("Принимают значения от 0 и 1, где 0 - стоит, 1 - идет ")]
     public int randMoveDirectionX;
@@ -45,7 +45,7 @@ public class Enemy : DamageableObject
 
     protected virtual void RandomMovement()
     {
-        mc.Move(moveVector);
+        mc.Move(movement);
     }
 
     IEnumerator Moving()
@@ -54,7 +54,7 @@ public class Enemy : DamageableObject
         var sign2 = Random.Range(-1, 2);
         sign = Mathf.Clamp(sign, randXMin, randXMax);
         sign2 = Mathf.Clamp(sign2, randZMin, randZMax);
-        moveVector = new Vector3(randMoveDirectionX * sign, 0, randMoveDirectionZ * sign2);
+        movement = new Vector3(randMoveDirectionX * sign, 0, randMoveDirectionZ * sign2);
         yield return new WaitForSeconds(movementTime);
         pause = true;
         StartCoroutine(Pause());

@@ -12,7 +12,11 @@ public class TreeMine : MonoBehaviour
     private void Start()
     {
         mineObject = GetComponentInParent<DamageableObject>();
+        
         hs = mineObject.GetHealthSystem();
+
+        
+        // переопределить hs
     }
 
     private void Mine()
@@ -30,6 +34,8 @@ public class TreeMine : MonoBehaviour
 
     IEnumerator MineTree()
     {
+        //Debug.Log(gameObject+"treeMine");
+        Debug.Log(hs+"hs");
         hs.Death += OnDeath;
         while (true)
         {
@@ -40,7 +46,9 @@ public class TreeMine : MonoBehaviour
             }
 
             hs.GetDamage(player.GetComponent<Stats>().axeDamage);
+            player.GetComponent<Animations>().MineTreeAnimation(true);
             yield return new WaitForSeconds(player.GetComponent<Stats>().axeSpeed);
+            player.GetComponent<Animations>().MineTreeAnimation(false);
         }
     }
 
