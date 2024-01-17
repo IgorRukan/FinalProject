@@ -6,6 +6,7 @@ public class Enemy : DamageableObject
 {
     private MovementComponent mc;
     private HealthSystem healthSystem;
+
     
     [Header("Сколько идет")] public float movementTime = 3f;
     [Header("Сколько стоит")] public float stopTime = 2f;

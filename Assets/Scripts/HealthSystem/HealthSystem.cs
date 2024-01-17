@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class HealthSystem : MonoBehaviour
 {
@@ -13,13 +14,15 @@ public class HealthSystem : MonoBehaviour
 
     private float currentHealthPercentage;
 
-    public event Action <GameObject> Death;
+    public event Action<GameObject> Death;
 
-    public event Action<float> ChangeHealth; 
+    public event Action<float> ChangeHealth;
 
+    private Stats stats;
     private void Start()
     {
         Init();
+        stats = GetComponent<Stats>();
     }
 
     public void Init()
@@ -55,6 +58,19 @@ public class HealthSystem : MonoBehaviour
     }
 
     public void GetDamage(float value)
+    {
+        var crit = Random.Range(0, 100);
+        var critDamage = 0f;
+        if (stats.critChance >= crit)
+        {
+            critDamage = stats.crit;
+        }
+        currentHealth -= value + value*(critDamage/100f) - stats.armor * value;
+        CheckIsDead();
+        ChangeHealthIv();
+    }
+
+    public void GetMineObjectDamage(float value)
     {
         currentHealth -= value;
         CheckIsDead();
@@ -96,6 +112,11 @@ public class HealthSystem : MonoBehaviour
             AddHealth(value);
             time -= period;
         }
+    }
+
+    public void LifeSteal()
+    {
+        currentHealth += stats.lifesteal * stats.damage;
     }
 
     private void Update()

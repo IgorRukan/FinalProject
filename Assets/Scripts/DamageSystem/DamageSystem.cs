@@ -3,23 +3,30 @@ using UnityEngine;
 
 public class DamageSystem : MonoBehaviour
 {
-    [SerializeField] private float DamageAmmount;
-    [SerializeField] private float DamagePeriod;
-    [SerializeField] private LayerMask IgnoredLayers;
+    public float damageAmount;
+    [SerializeField] private float damagePeriod;
+    [SerializeField] private LayerMask ignoredLayers;
 
     private HealthSystem damagable;
 
+    public void SetDamage(float damage)
+    {
+        damageAmount = damage;
+    }
+    
     private void OnTriggerEnter(Collider other)
     {
-        if ((IgnoredLayers.value & (1<<other.gameObject.layer)) == 0)
+        if ((ignoredLayers.value & (1<<other.gameObject.layer)) == 0)
         {
             if (other.GetComponent<HealthSystem>())
             {
                 damagable = other.GetComponent<HealthSystem>();
 
-                damagable.GetDamage(DamageAmmount);
+                damagable.GetDamage(damageAmount);
+                
+                damagable.LifeSteal();
 
-                if (DamagePeriod > 0)
+                if (damagePeriod > 0)
                 {
                     damagable.Death += OnDamagableDeath;
                     StartCoroutine(TakeDamage());
@@ -47,8 +54,8 @@ public class DamageSystem : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(DamagePeriod);
-            damagable.GetDamage(DamageAmmount);
+            yield return new WaitForSeconds(damagePeriod);
+            damagable.GetDamage(damageAmount);
         }
     }
 

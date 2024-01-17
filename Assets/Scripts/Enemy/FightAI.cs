@@ -42,12 +42,12 @@ public class FightAI : MonoBehaviour
             
             GetComponent<MovementComponent>().Move(direction);
             
-            animations.SetMovement(direction);
+            //animations.SetMovement(direction);
         }
         else
         {
             direction = new Vector3(0, 0, 0);
-            animations.SetMovement(direction);
+            //animations.SetMovement(direction);
         }
 
         transform.LookAt(opponent1.transform);

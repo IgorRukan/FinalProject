@@ -27,6 +27,7 @@ public class BasePlayer : DamageableObject
         //animations = GetComponent<Animations>();
     }
 
+
     private void Move_canceled(InputAction.CallbackContext context)
     {
         movement = Vector3.zero;

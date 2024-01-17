@@ -36,7 +36,7 @@ public class Building : MonoBehaviour
 
     public void Upgrade()
     {
-        player.GetComponent<Stats>().strength -= price;
+        player.GetComponent<Stats>().damage -= price;
         price += price * priceUpgradeCoef;
         maxAmountOfResource += maxAmountOfResource * amountUpgradeCoef;
     }

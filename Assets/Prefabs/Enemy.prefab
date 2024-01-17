@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 4225205193510452995}
   - component: {fileID: 8464323277162872337}
   - component: {fileID: 8062356475318480887}
+  - component: {fileID: 5646036886447792721}
   m_Layer: 8
   m_Name: Enemy
   m_TagString: Untagged
@@ -212,7 +213,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 681766551b7db4d49abbfbabc2389fb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
   characterController: {fileID: 601032567422217802}
   gravity: -9.81
 --- !u!114 &670830445167479281
@@ -245,7 +245,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 8620254603858736873, guid: 9275447cc56310242a6c364c76cad46e, type: 3}
-  ShootingRate: 0.5
   pc: {fileID: 0}
   target: {fileID: 0}
   shootPos: {fileID: 0}
@@ -297,6 +296,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movement: {x: 0, y: 0, z: 0}
+--- !u!114 &5646036886447792721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2269321065437285558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f27ceaff02dd71a43be94186203988bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  expForKill: 10
+  playerExp: {fileID: 0}
 --- !u!1001 &8756698270557730969
 PrefabInstance:
   m_ObjectHideFlags: 0

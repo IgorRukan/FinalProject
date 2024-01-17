@@ -45,7 +45,7 @@ public class TreeMine : MonoBehaviour
                 yield break;
             }
 
-            hs.GetDamage(player.GetComponent<Stats>().axeDamage);
+            hs.GetMineObjectDamage(player.GetComponent<Stats>().axeDamage);
             player.GetComponent<Animations>().MineTreeAnimation(true);
             yield return new WaitForSeconds(player.GetComponent<Stats>().axeSpeed);
             player.GetComponent<Animations>().MineTreeAnimation(false);

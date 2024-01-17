@@ -4,7 +4,7 @@ using UnityEngine;
 public class Shoot : MonoBehaviour
 {
     public GameObject bullet;
-    public float ShootingRate;
+    private float shootingRate;
     public PerceptionComponent pc;
 
     public DamageableObject target;
@@ -15,10 +15,17 @@ public class Shoot : MonoBehaviour
 
     private Animations animations;
 
+    public DamageableObject current;
+    
+    private Stats stats;
+    
+    public AmmoPool pool;
     private void Start()
     {
         pc = GetComponent<PerceptionComponent>();
         animations = GetComponent<Animations>();
+        stats = GetComponent<Stats>();
+        current = GetComponent<DamageableObject>();
     }
 
     public void Shooting()
@@ -27,19 +34,24 @@ public class Shoot : MonoBehaviour
         {
             return;
         }
-
+        
+        bullet.GetComponent<DamageSystem>().damageAmount = stats.damage;
+        
         //shootPos.transform.position
         var position = transform.position;
         Vector3 dir = target.transform.position - position;
         Quaternion rotation = Quaternion.LookRotation(dir, Vector3.up);
 
-        Instantiate(bullet, position, rotation);
+        var bul = pool.GetPooledObjects();
+        bul.gameObject.SetActive(true);
+        bul.transform.position = position;
+        bul.transform.rotation = rotation;
+
+        bul.Shoot(dir);
     }
 
     private void IsInRange()
     {
-        if (target == null)
-            return;
         float distance = Vector3.Distance(transform.position, target.transform.position);
         if (distance <= pc.smallDistance)
         {
@@ -54,25 +66,26 @@ public class Shoot : MonoBehaviour
     private void Update()
     {
         target = pc.GetTarget();
-        IsInRange();
         if (target == null)
         {
             GetComponent<Animations>().AttackAnimation(false);
             return;
         }
+        IsInRange();
 
         time += Time.deltaTime;
 
         if (animations.movement == Vector3.zero)
         {
             GetComponent<Animations>().AttackAnimation(true);
-            //Debug.Break();
 
-            if (time > ShootingRate)
+            shootingRate = stats.attackSpeed;
+            
+            if (time > shootingRate)
             {
                 Shooting();
                 transform.LookAt(target.transform);
-                time -= ShootingRate;
+                time -= shootingRate;
             }
         }
         else

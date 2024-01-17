@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddcfa3ef3ce2c49d0a2c48590c38627f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 10
+  force: 2.5
   rBody: {fileID: 21963298329118310}
 --- !u!114 &-4053729452149994679
 MonoBehaviour:
@@ -161,8 +161,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59ab00bd1d0b743138cb2bcea9b885d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DamageAmmount: 1
-  DamagePeriod: 0
-  IgnoredLayers:
+  damageAmount: 12
+  damagePeriod: 0
+  ignoredLayers:
     serializedVersion: 2
-    m_Bits: 1463
+    m_Bits: 0

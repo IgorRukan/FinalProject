@@ -1,16 +1,23 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class MovementComponent : MonoBehaviour
 {
-    public float speed = 3f;
     public CharacterController characterController;
     public float gravity = -9.81f;
+
+    private Stats stats;
 
     private CharacterController Controller
     {
         get { return characterController = characterController ? characterController : GetComponent<CharacterController>(); }
+    }
+
+    private void Start()
+    {
+        stats = GetComponent<Stats>();
     }
 
 
@@ -18,7 +25,7 @@ public class MovementComponent : MonoBehaviour
     {
 
         movement.y = gravity;
-        Vector3 displacement = movement * speed * Time.deltaTime;
+        Vector3 displacement = movement * stats.speed * Time.deltaTime;
         Controller.Move(displacement);
     }
 }

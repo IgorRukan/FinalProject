@@ -11,6 +11,14 @@ public class PerceptionComponent : MonoBehaviour
     public float SearchRadius;
     public GameObject closestObj;
     public List<GameObject> targets;
+
+    private Stats stats;
+
+    private void Start()
+    {
+        stats = GetComponent<Stats>();
+    }
+
     private void Update()
     {
         GetTargets();
@@ -71,6 +79,9 @@ public class PerceptionComponent : MonoBehaviour
 
     private void ClosestTarget()
     {
+        smallDistance = stats.attackRange;
+        bigDistance = stats.bigAttackRange;
+        
         bool inRange = false;
         float closestDistance = Mathf.Infinity;
         foreach (var target in targets)

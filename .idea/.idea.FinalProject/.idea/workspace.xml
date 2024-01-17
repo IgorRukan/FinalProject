@@ -13,12 +13,13 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Animation/Animations.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Attack/MeleeAttack.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ExperienceForDeath.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/HealthSystem/HealthBar.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/JoystickLogic/JoystickMovement.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MineObjects.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/Experience.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Pools/ObjectsPool.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Spawn.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/TreeMine.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/db6cea5b3c9142648edbd2386e71c20a3c00/5f/9ea455cf/NativeInputSystem.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="2a5UInoIVhXOBbQ9CZIZQIycalX" />
@@ -99,7 +100,10 @@
       <workItem from="1704884944896" duration="14343000" />
       <workItem from="1704984634136" duration="2876000" />
       <workItem from="1705077605836" duration="2670000" />
-      <workItem from="1705140778354" duration="67000" />
+      <workItem from="1705140778354" duration="5741000" />
+      <workItem from="1705238744328" duration="5569000" />
+      <workItem from="1705427972010" duration="7665000" />
+      <workItem from="1705486510798" duration="6140000" />
     </task>
     <servers />
   </component>
@@ -135,6 +139,30 @@
             </ChatHistoryModel>
           </value>
         </entry>
+        <entry key="3c1d76">
+          <value>
+            <ChatHistoryModel>
+              <option name="contextFilesPaths">
+                <list>
+                  <option value="$PROJECT_DIR$/Assets/Scripts/DamageSystem/DamageSystem.cs" />
+                </list>
+              </option>
+              <option name="id" value="3c1d76" />
+              <option name="initiateTms" value="1705148067421" />
+              <option name="request" value="как заполнить num" />
+              <option name="response" value="" />
+              <option name="responseDescription" value="В вашем коде отсутствует объявление переменной `num`. Чтобы заполнить переменную `num`, вы должны сначала объявить ее и присвоить ей значение. Вот пример:&#10;&#10;```csharp&#10;int num; // Объявление переменной num&#10;&#10;void Start()&#10;{&#10;    num = 10; // Присвоение значения 10 переменной num&#10;}&#10;```&#10;&#10;В этом примере мы объявляем переменную `num` типа `int` и затем присваиваем ей значение 10 в методе `Start()`. Вы можете изменить значение переменной `num` на любое другое значение, которое вам нужно." />
+              <option name="responseFileName" value="" />
+              <option name="responseFilePath" value="" />
+              <option name="responseTms" value="1705148071943" />
+              <option name="usedFilesPaths">
+                <list>
+                  <option value="$PROJECT_DIR$/Assets/Scripts/DamageSystem/DamageSystem.cs" />
+                </list>
+              </option>
+            </ChatHistoryModel>
+          </value>
+        </entry>
         <entry key="67be88">
           <value>
             <ChatHistoryModel>
@@ -154,6 +182,30 @@
               <option name="usedFilesPaths">
                 <list>
                   <option value="$PROJECT_DIR$/Assets/Scripts/Spawn.cs" />
+                </list>
+              </option>
+            </ChatHistoryModel>
+          </value>
+        </entry>
+        <entry key="6ce487">
+          <value>
+            <ChatHistoryModel>
+              <option name="contextFilesPaths">
+                <list>
+                  <option value="$PROJECT_DIR$/Assets/Scripts/DamageSystem/DamageSystem.cs" />
+                </list>
+              </option>
+              <option name="id" value="6ce487" />
+              <option name="initiateTms" value="1705148077730" />
+              <option name="request" value="как заполнить Enum" />
+              <option name="response" value="" />
+              <option name="responseDescription" value="Для заполнения значения перечисления (enum) вам нужно присвоить переменной перечисления одно из определенных значений перечисления. В вашем коде у вас есть переменная `obj`, которая является типом перечисления. Вот пример, как заполнить переменную `obj` с помощью значения перечисления:&#10;&#10;```csharp&#10;public enum MyEnum&#10;{&#10;    Value1,&#10;    Value2,&#10;    Value3&#10;}&#10;&#10;public MyEnum obj; // Объявление переменной obj типа MyEnum&#10;&#10;void Start()&#10;{&#10;    obj = MyEnum.Value2; // Присвоение значения Value2 переменной obj&#10;}&#10;```&#10;&#10;В этом примере мы объявляем перечисление `MyEnum`, которое содержит три значения: `Value1`, `Value2` и `Value3`. Затем мы объявляем переменную `obj` типа `MyEnum` и присваиваем ей значение `Value2` в методе `Start()`. Вы можете изменить значение переменной `obj` на любое другое значение из перечисления `MyEnum`, которое вам нужно." />
+              <option name="responseFileName" value="" />
+              <option name="responseFilePath" value="" />
+              <option name="responseTms" value="1705148081608" />
+              <option name="usedFilesPaths">
+                <list>
+                  <option value="$PROJECT_DIR$/Assets/Scripts/DamageSystem/DamageSystem.cs" />
                 </list>
               </option>
             </ChatHistoryModel>
@@ -255,6 +307,30 @@
             </ChatHistoryModel>
           </value>
         </entry>
+        <entry key="d0f5d8">
+          <value>
+            <ChatHistoryModel>
+              <option name="contextFilesPaths">
+                <list>
+                  <option value="$PROJECT_DIR$/Assets/Scripts/Player/Experience.cs" />
+                </list>
+              </option>
+              <option name="id" value="d0f5d8" />
+              <option name="initiateTms" value="1705242507366" />
+              <option name="request" value="как сделать proprty" />
+              <option name="response" value="" />
+              <option name="responseDescription" value="Чтобы создать свойство (property) в C#, вы можете использовать ключевые слова `get` и `set`. Свойства позволяют вам определить специальные методы доступа для чтения (get) и записи (set) значения свойства. Вот пример создания свойства в вашем коде:&#10;&#10;```csharp&#10;public class Experience : MonoBehaviour&#10;{&#10;    private int exp;&#10;    private int maxExp;&#10;&#10;    public int Exp&#10;    {&#10;        get { return exp; } // Метод доступа для чтения значения свойства&#10;        set { exp = value; } // Метод доступа для записи значения свойства&#10;    }&#10;&#10;    public int MaxExp&#10;    {&#10;        get { return maxExp; } // Метод доступа для чтения значения свойства&#10;        set { maxExp = value; } // Метод доступа для записи значения свойства&#10;    }&#10;&#10;    public int Level&#10;    {&#10;        get { return exp / maxExp; } // Метод доступа для вычисления значения свойства&#10;    }&#10;}&#10;```&#10;&#10;В этом примере мы создаем три свойства: `Exp`, `MaxExp` и `Level`. Свойства `Exp` и `MaxExp` имеют методы доступа `get` и `set`, которые позволяют получать и устанавливать значения переменных `exp` и `maxExp`. Свойство `Level` имеет только метод доступа `get`, который вычисляет и возвращает уровень на основе значений `exp` и `maxExp`.&#10;&#10;Вы можете использовать эти свойства, как обычные переменные, для получения и установки значений. Например:&#10;&#10;```csharp&#10;Experience experience = new Experience();&#10;experience.Exp = 100; // Установка значения свойства Exp&#10;int currentExp = experience.Exp; // Получение значения свойства Exp&#10;int currentLevel = experience.Level; // Получение значения свойства Level&#10;```&#10;&#10;В этом примере мы создаем экземпляр класса `Experience` и используем свойство `Exp` для установки значения опыта (`100`) и свойство `Level` для получения текущего уровня.&#10;&#10;Надеюсь, это поможет вам создать свойства в вашем коде. Если у вас возникнут дополнительные вопросы, пожалуйста, дайте мне знать." />
+              <option name="responseFileName" value="" />
+              <option name="responseFilePath" value="" />
+              <option name="responseTms" value="1705242516717" />
+              <option name="usedFilesPaths">
+                <list>
+                  <option value="$PROJECT_DIR$/Assets/Scripts/Player/Experience.cs" />
+                </list>
+              </option>
+            </ChatHistoryModel>
+          </value>
+        </entry>
         <entry key="d1a729">
           <value>
             <ChatHistoryModel>
@@ -298,6 +374,30 @@
               <option name="usedFilesPaths">
                 <list>
                   <option value="$PROJECT_DIR$/Assets/Scripts/Spawn.cs" />
+                </list>
+              </option>
+            </ChatHistoryModel>
+          </value>
+        </entry>
+        <entry key="e6a68e">
+          <value>
+            <ChatHistoryModel>
+              <option name="contextFilesPaths">
+                <list>
+                  <option value="$PROJECT_DIR$/Assets/Scripts/DamageSystem/DamageSystem.cs" />
+                </list>
+              </option>
+              <option name="id" value="e6a68e" />
+              <option name="initiateTms" value="1705148191965" />
+              <option name="request" value="в чем моя ошибка?" />
+              <option name="response" value="" />
+              <option name="responseDescription" value="В вашем коде есть несколько проблем, которые могут вызывать ошибку:&#10;&#10;1. Ошибка в объявлении перечисления: Ваше объявление перечисления `Objects` не является правильным синтаксисом для объявления перечисления в C#. Вместо этого, вы должны использовать ключевое слово `enum` для объявления перечисления. Вот правильное объявление перечисления:&#10;&#10;```csharp&#10;public enum Objects&#10;{&#10;    player,&#10;    enemy,&#10;    tree&#10;}&#10;```&#10;&#10;2. Ошибка в использовании перечисления: В вашем коде вы пытаетесь использовать перечисление `Objects` в качестве типа переменной `obj`, но вы не объявили эту переменную. Чтобы исправить это, вы должны объявить переменную `obj` типа `Objects` и присвоить ей одно из значений перечисления. Например:&#10;&#10;```csharp&#10;Objects obj = Objects.player; // Присвоение значения player переменной obj&#10;```&#10;&#10;3. Ошибка в использовании переменной `obj`: В вашем коде вы не используете переменную `obj` нигде. Убедитесь, что вы используете переменную `obj` в нужном месте вашего кода.&#10;&#10;Проверьте эти места в вашем коде и внесите соответствующие изменения, чтобы исправить ошибки. Если у вас возникнут дополнительные вопросы или проблемы, пожалуйста, предоставьте больше информации, чтобы я мог помочь вам более точно." />
+              <option name="responseFileName" value="" />
+              <option name="responseFilePath" value="" />
+              <option name="responseTms" value="1705148197036" />
+              <option name="usedFilesPaths">
+                <list>
+                  <option value="$PROJECT_DIR$/Assets/Scripts/DamageSystem/DamageSystem.cs" />
                 </list>
               </option>
             </ChatHistoryModel>
