@@ -4,7 +4,7 @@ public class ExperienceForDeath : MonoBehaviour
 {
     public int expForKill;
 
-    public Experience playerExp;
+    private Experience playerExp;
 
     public void Start()
     {
@@ -13,6 +13,7 @@ public class ExperienceForDeath : MonoBehaviour
 
     private void Exp(GameObject g)
     {
+        playerExp = GetComponent<PerceptionComponent>().GetTarget().GetComponent<Experience>();
         playerExp.AddExp(expForKill);
     }
 }

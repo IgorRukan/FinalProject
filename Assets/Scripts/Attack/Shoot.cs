@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class Shoot : MonoBehaviour
 {
-    public GameObject bullet;
     private float shootingRate;
     public PerceptionComponent pc;
 
@@ -34,19 +33,19 @@ public class Shoot : MonoBehaviour
         {
             return;
         }
-        
-        bullet.GetComponent<DamageSystem>().damageAmount = stats.damage;
-        
+
         //shootPos.transform.position
         var position = transform.position;
         Vector3 dir = target.transform.position - position;
         Quaternion rotation = Quaternion.LookRotation(dir, Vector3.up);
 
         var bul = pool.GetPooledObjects();
+        bul.GetComponent<DamageSystem>().damageAmount = stats.damage;
         bul.gameObject.SetActive(true);
         bul.transform.position = position;
         bul.transform.rotation = rotation;
 
+        bul.SetTarget(target.transform);
         bul.Shoot(dir);
     }
 

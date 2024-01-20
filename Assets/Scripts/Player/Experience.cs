@@ -38,10 +38,10 @@ public class Experience : MonoBehaviour
     {
         if (exp > maxExp)
         {
-            LvlUp?.Invoke();
             exp -= maxExp;
             maxExp += (int)(maxExp * 0.05f);
             lvl += 1;
+            LvlUp?.Invoke();
         }
     }
 }

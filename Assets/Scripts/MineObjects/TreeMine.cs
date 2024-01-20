@@ -54,7 +54,7 @@ public class TreeMine : MonoBehaviour
 
     private void OnDeath(GameObject go)
     {
-        player.GetComponent<Stats>().AddStat("wood", reward);
+        player.GetComponent<Stats>().AddStat(Stats.Stat.wood, reward);
         hs.Death -= OnDeath;
         isMinening = false;
         player.GetComponent<Stats>().isMinening = false;

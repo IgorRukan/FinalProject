@@ -27,7 +27,7 @@ public class PerceptionComponent : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.white;
+        Gizmos.color = Color.black;
         Gizmos.DrawWireSphere(transform.position, smallDistance);
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position, bigDistance);

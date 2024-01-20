@@ -606,11 +606,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d0f31225be4b1499d8f34f065a2f83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 8620254603858736873, guid: 965a3629e204616458083ab3714cb802, type: 3}
   pc: {fileID: 6971863639665783665}
   target: {fileID: 0}
   shootPos: {fileID: 8303749243385229966}
   inRange: 0
+  current: {fileID: 0}
+  pool: {fileID: 0}
 --- !u!114 &6971863639665783665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -692,9 +693,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf032ab22f12e4898a2ef822a85c6316, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100000
+  maxHealth: 100
   currentHealth: 0
-  AutoHealPeriod: -1
+  AutoHealPeriod: 1
   AutoHealValue: 0
 --- !u!54 &5728500675540976416
 Rigidbody:
@@ -735,17 +736,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 153d495ae72475b4090d61622adab9ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
+  damage: 20
   armor: 0
   lifesteal: 0
-  speed: 1
-  attackRange: 1
+  speed: 20
+  attackRange: 10
   bigAttackRange: 0
   attackSpeed: 1
+  maxHealth: 0
+  hpRegen: 0
   crit: 0
   critChance: 0
   bonusExp: 0
-  axeDamage: 2
+  axeDamage: 500
   axeSpeed: 1
   pickaxeDamage: 2
   pickaxeSpeed: 1

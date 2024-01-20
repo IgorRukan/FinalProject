@@ -12,6 +12,8 @@ public class Stats : MonoBehaviour
     public float attackRange; // lvl + 0.1
     public float bigAttackRange;
     public float attackSpeed; // lvl + hz
+    public float maxHealth; // lvl + 50hp
+    public float hpRegen; // lvl + 0.5hp
     public float crit; // only buy
     public float critChance; // only buy
     public float bonusExp; // only buy
@@ -24,6 +26,25 @@ public class Stats : MonoBehaviour
 
     public bool isMinening = false;
 
+    public enum Stat
+    {
+        damage,
+        armor,
+        lifesteal,
+        speed,
+        attackRange,
+        attackSpeed,
+        maxHealth,
+        hpRegen,
+        crit,
+        critChance,
+        axeDamage,
+        axeSpeed,
+        pickaxeDamage,
+        pickaxeSpeed,
+        wood
+    }
+    
     private void Start()
     {
         if (bigAttackRange == 0)
@@ -39,17 +60,18 @@ public class Stats : MonoBehaviour
 
     public void LevelUp()
     {
-        AddStat("damage", 1);
-        AddStat("armor", 0.05f);
-        AddStat("speed", 0.005f);
-        AddStat("attackRange", 0.1f);
-        AddStat("attackSpeed", -0.01f);
+        AddStat(Stat.damage, 1);
+        AddStat(Stat.armor, 0.05f);
+        AddStat(Stat.speed, 0.005f);
+        AddStat(Stat.attackRange, 0.1f);
+        AddStat(Stat.attackSpeed, -0.01f);
+        AddStat(Stat.hpRegen, 0.5f);
         BigRangeCheck();
     }
 
-    public void AddStat(string statName, float value)
+    public void AddStat(Stat statName, float value)
     {
-        var field = GetType().GetField(statName);
+        var field = GetType().GetField(statName.ToString());
 
         if (field != null && field.FieldType == typeof(float))
         {

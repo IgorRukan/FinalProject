@@ -1,6 +1,4 @@
-using System;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class FightAI : MonoBehaviour
 {
@@ -31,25 +29,25 @@ public class FightAI : MonoBehaviour
         Attack(target);
     }
 
-    private void Attack(DamageableObject opponent1)
+    private void Attack(DamageableObject opponent)
     {
         Vector3 direction;
         if (!GetComponent<Shoot>().inRange)
         {
-            direction = opponent1.transform.position - transform.position;
+            direction = opponent.transform.position - transform.position;
 
             direction.Normalize();
             
-            GetComponent<MovementComponent>().Move(direction);
-            
-            //animations.SetMovement(direction);
+            mc.Move(direction);
+            Debug.Log("move "+direction);
+            animations.SetMovement(direction);
         }
         else
         {
             direction = new Vector3(0, 0, 0);
-            //animations.SetMovement(direction);
+            animations.SetMovement(direction);
         }
 
-        transform.LookAt(opponent1.transform);
+        transform.LookAt(opponent.transform);
     }
 }

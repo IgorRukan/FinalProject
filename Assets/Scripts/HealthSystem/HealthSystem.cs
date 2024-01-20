@@ -1,11 +1,10 @@
 using System;
-using System.Collections;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class HealthSystem : MonoBehaviour
 {
-    [SerializeField] private float maxHealth;
+    [SerializeField]private float maxHealth;
     [SerializeField] private float currentHealth;
     [SerializeField] private float AutoHealPeriod = -1;
     [SerializeField] private float AutoHealValue;
@@ -19,10 +18,25 @@ public class HealthSystem : MonoBehaviour
     public event Action<float> ChangeHealth;
 
     private Stats stats;
+
+    private Experience experience;
+
     private void Start()
     {
         Init();
         stats = GetComponent<Stats>();
+        if (GetComponent<BasePlayer>())
+        {
+            experience = GetComponent<Experience>();
+            experience.LvlUp += LvlUp;    
+        }
+        
+    }
+
+    private void LvlUp()
+    {
+        maxHealth += stats.maxHealth;
+        AutoHealValue = stats.hpRegen;
     }
 
     public void Init()
@@ -65,7 +79,8 @@ public class HealthSystem : MonoBehaviour
         {
             critDamage = stats.crit;
         }
-        currentHealth -= value + value*(critDamage/100f) - stats.armor * value;
+
+        currentHealth -= value + value * (critDamage / 100f) - stats.armor * value;
         CheckIsDead();
         ChangeHealthIv();
     }
@@ -103,8 +118,13 @@ public class HealthSystem : MonoBehaviour
         if (period <= 0)
             return;
 
-        if (currentHealth >= maxHealth)
+        if (value == 0)
+        {
             return;
+        }
+
+            if (currentHealth >= maxHealth)
+                return;
 
         time += Time.deltaTime;
         if (time > period)
