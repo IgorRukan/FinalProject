@@ -32,8 +32,6 @@ public class TreeMine : MonoBehaviour
 
     IEnumerator MineTree()
     {
-        //Debug.Log(gameObject+"treeMine");
-        Debug.Log(hs+"hs");
         hs.Death += OnDeath;
         while (true)
         {
@@ -52,7 +50,7 @@ public class TreeMine : MonoBehaviour
 
     private void OnDeath(GameObject go)
     {
-        player.GetComponent<Stats>().AddStat(Stats.Stat.wood, reward);
+        player.GetComponent<PlayerResources>().AddOrTakeResourse(PlayerResources.resourses.wood, reward,1);
         hs.Death -= OnDeath;
         isMinening = false;
         player.GetComponent<Stats>().isMinening = false;

@@ -18,8 +18,8 @@ MonoBehaviour:
   armorMax: 7
   lifestealMin: 1
   lifestealMax: 2
-  speedMin: 5
-  speedMax: 10
+  speedMin: 4
+  speedMax: 8
   attackRangeMin: 2
   attackRangeMax: 4
   attackSpeedMin: 0.1
@@ -32,8 +32,8 @@ MonoBehaviour:
   critMax: 2
   critChanceMin: 3
   critChanceMax: 5
-  bonusExpMin: 10
-  bonusExpMax: 15
+  bonusExpMin: 5
+  bonusExpMax: 10
   axeDamageMin: 25
   axeDamageMax: 50
   orangeQualityChanse: 1
