@@ -6,7 +6,7 @@ public class TreeMine : MonoBehaviour
     private bool isMinening;
     private HealthSystem hs;
     private BasePlayer player;
-    public float reward;
+    private int reward;
     private DamageableObject mineObject;
 
     private void Start()
@@ -14,9 +14,7 @@ public class TreeMine : MonoBehaviour
         mineObject = GetComponentInParent<DamageableObject>();
         
         hs = mineObject.GetHealthSystem();
-
-        
-        // переопределить hs
+        reward = mineObject.GetReward();
     }
 
     private void Mine()

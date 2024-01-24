@@ -6,5 +6,11 @@ public class InventorySlot : MonoBehaviour
 {
     public Items currentItem;
 
-    public Items.Type type;
+    public CreateItems.Type type;
+
+    public void ShowItem()
+    {
+        currentItem.transform.position = transform.position;
+    }
+    
 }

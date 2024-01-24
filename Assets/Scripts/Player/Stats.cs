@@ -38,6 +38,7 @@ public class Stats : MonoBehaviour
         hpRegen,
         crit,
         critChance,
+        bonusExp,
         axeDamage,
         axeSpeed,
         pickaxeDamage,

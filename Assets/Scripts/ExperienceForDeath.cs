@@ -15,5 +15,11 @@ public class ExperienceForDeath : MonoBehaviour
     {
         playerExp = GetComponent<PerceptionComponent>().GetTarget().GetComponent<Experience>();
         playerExp.AddExp(expForKill);
+
+        ItemDrop itemDrop = GetComponent<ItemDrop>();
+        itemDrop.DropItem(transform.position);
+        
+        
+        
     }
 }

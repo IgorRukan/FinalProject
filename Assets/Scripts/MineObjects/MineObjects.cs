@@ -6,6 +6,7 @@ using UnityEngine;
 public class MineObjects : DamageableObject
 {
     public HealthSystem hs;
+    public int reward;
 
     private void Start()
     {
@@ -15,5 +16,10 @@ public class MineObjects : DamageableObject
     public override HealthSystem GetHealthSystem()
     {
         return hs;
+    }
+    
+    public override int GetReward()
+    {
+        return reward;
     }
 }

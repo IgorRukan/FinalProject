@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -2502746096238855421}
   - component: {fileID: -285122779981015083}
   m_Layer: 0
-  m_Name: Head
+  m_Name: Item
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -91,10 +91,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   quality: 1
+  createItems: {fileID: 0}
   stat: 0000000007000000
   statValue:
   - 15
   - 5
+  equipMenu: {fileID: 0}
 --- !u!114 &-285122779981015083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,6 +116,8 @@ MonoBehaviour:
   attackRange: 0
   bigAttackRange: 0
   attackSpeed: 0
+  maxHealth: 0
+  hpRegen: 0
   crit: 0
   critChance: 0
   bonusExp: 0

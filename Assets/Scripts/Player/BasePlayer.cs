@@ -54,4 +54,10 @@ public class BasePlayer : DamageableObject
     {
         return gameObject.GetComponent<HealthSystem>();
     }
+    
+    public override int GetReward()
+    {
+        int a = 0;
+        return a;
+    }
 }

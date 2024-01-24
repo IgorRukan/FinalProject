@@ -39,7 +39,7 @@ public class FightAI : MonoBehaviour
             direction.Normalize();
             
             mc.Move(direction);
-            Debug.Log("move "+direction);
+            //Debug.Log("move "+direction);
             animations.SetMovement(direction);
         }
         else

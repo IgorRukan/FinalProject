@@ -7,9 +7,11 @@ public class CameraMove : MonoBehaviour
 {
     public BasePlayer player;
 
+    public float cameraFix;
+
     private void Update()
     {
-        Vector3 newPos = new Vector3(player.transform.position.x,transform.position.y,player.transform.position.z-7f);
+        Vector3 newPos = new Vector3(player.transform.position.x,transform.position.y,player.transform.position.z-cameraFix);
         transform.position = newPos;
     }
 }

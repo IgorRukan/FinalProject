@@ -5,4 +5,5 @@ using UnityEngine;
 public abstract class DamageableObject : MonoBehaviour
 {
     public abstract HealthSystem GetHealthSystem();
+    public abstract int GetReward();
 }

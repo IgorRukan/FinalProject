@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fdc4e00474535d43af67fc8b7f8888c, type: 3}
+  m_Name: Blue
+  m_EditorClassIdentifier: 
+  damageMin: 0
+  damageMax: 0
+  armorMin: 0
+  armorMax: 0
+  lifestealMin: 0
+  lifestealMax: 0
+  speedMin: 0
+  speedMax: 0
+  attackRangeMin: 0
+  attackRangeMax: 0
+  attackSpeedMin: 0
+  attackSpeedMax: 0
+  maxHealthMin: 0
+  maxHealthMax: 0
+  hpRegenMin: 0
+  hpRegenMax: 0
+  critMin: 0
+  critMax: 0
+  critChanceMin: 0
+  critChanceMax: 0
+  bonusExpMin: 0
+  bonusExpMax: 0
+  axeDamageMin: 0
+  axeDamageMax: 0
+  orangeQualityChanse: 0
+  goldQualityChanse: 0
+  purpleQualityChanse: 0
+  blueQualityChanse: 0
+  greenQualityChanse: 0

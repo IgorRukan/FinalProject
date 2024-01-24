@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Enemy : DamageableObject
@@ -72,5 +73,11 @@ public class Enemy : DamageableObject
     {
 
         return gameObject.GetComponent<HealthSystem>();
+    }
+
+    public override int GetReward()
+    {
+        int a = 0;
+        return a;
     }
 }

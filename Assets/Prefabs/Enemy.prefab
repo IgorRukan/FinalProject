@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 8464323277162872337}
   - component: {fileID: 8062356475318480887}
   - component: {fileID: 5646036886447792721}
+  - component: {fileID: 764867676509912337}
   m_Layer: 8
   m_Name: Enemy
   m_TagString: Untagged
@@ -244,11 +245,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10d0f31225be4b1499d8f34f065a2f83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 8620254603858736873, guid: 9275447cc56310242a6c364c76cad46e, type: 3}
   pc: {fileID: 0}
   target: {fileID: 0}
   shootPos: {fileID: 0}
   inRange: 0
+  current: {fileID: 0}
+  pool: {fileID: 0}
 --- !u!114 &4225205193510452995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -309,7 +311,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   expForKill: 10
-  playerExp: {fileID: 0}
+--- !u!114 &764867676509912337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2269321065437285558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3045f50b0474bd04ab14f4c6831c7ceb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: -2502746096238855421, guid: 5bd220608d55dfb438cddd1badf23bff, type: 3}
 --- !u!1001 &8756698270557730969
 PrefabInstance:
   m_ObjectHideFlags: 0

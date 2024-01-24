@@ -46,5 +46,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 0}
   spawnObject: {fileID: 0}
-  delaySpawnTime: 3
+  delaySpawnTime: 60
   deathText: {fileID: 0}
