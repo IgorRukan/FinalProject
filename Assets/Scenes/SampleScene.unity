@@ -32534,7 +32534,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3450026942922723547, guid: d51dcd47c3de14d44a9da129882ea628, type: 3}
       propertyPath: speed
-      value: 25
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3450026942922723547, guid: d51dcd47c3de14d44a9da129882ea628, type: 3}
       propertyPath: damage
@@ -32554,7 +32554,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3450026942922723547, guid: d51dcd47c3de14d44a9da129882ea628, type: 3}
       propertyPath: attackSpeed
-      value: 0.4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4814847531854744624, guid: d51dcd47c3de14d44a9da129882ea628, type: 3}
       propertyPath: pool
