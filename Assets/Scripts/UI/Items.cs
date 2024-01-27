@@ -6,6 +6,7 @@ using Random = UnityEngine.Random;
 
 public class Items : MonoBehaviour,IPointerEnterHandler
 {
+    public Action<Items> OnClicked;
 
     public CreateItems.Type type;
 
@@ -45,7 +46,6 @@ public class Items : MonoBehaviour,IPointerEnterHandler
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        equipMenu.SetActive(true);
-        equipMenu.GetComponent<EquipMenu>().SetItem(this);
+        OnClicked(this);
     }
 }

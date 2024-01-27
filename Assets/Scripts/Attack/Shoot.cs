@@ -84,7 +84,7 @@ public class Shoot : MonoBehaviour
             {
                 Shooting();
                 transform.LookAt(target.transform);
-                time -= shootingRate;
+                time = 0;
             }
         }
         else

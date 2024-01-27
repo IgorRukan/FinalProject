@@ -12,6 +12,8 @@ public class CreateItems : MonoBehaviour
         Head,
         Armor,
         Trousers,
+        Tshirt,
+        Gloves,
         Boots,
         Ring,
         Weapon,

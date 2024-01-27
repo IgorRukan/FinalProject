@@ -6,14 +6,22 @@
   <component name="ChangeListManager">
     <list default="true" id="7d14de2f-65c0-4bbd-85b6-03fd211dc65a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FinalProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FinalProject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI items/ItemB.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI items/ItemB.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MineObjects/TreeMine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MineObjects/TreeMine.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/ItemsRange/Blue.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/ItemsRange/Blue.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/ItemsRange/Gold.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/ItemsRange/Gold.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/ItemsRange/Green.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/ItemsRange/Green.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/ItemsRange/Grey.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/ItemsRange/Grey.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/ItemsRange/Orange.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/ItemsRange/Orange.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/ItemsRange/Purple.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/ItemsRange/Purple.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Attack/Shoot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Attack/Shoot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/CreateItems.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/CreateItems.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/ItemDrop.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/ItemDrop.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/ItemSlotManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/ItemSlotManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Items.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Items.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Anton SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Anton SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Bangers SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Bangers SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Electronic Highway Sign SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Electronic Highway Sign SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Oswald Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Oswald Bold SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,10 +98,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="20432">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="20432" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -135,7 +143,9 @@
       <workItem from="1705938439378" duration="8748000" />
       <workItem from="1705958757146" duration="896000" />
       <workItem from="1706028844612" duration="10075000" />
-      <workItem from="1706093540205" duration="9900000" />
+      <workItem from="1706093540205" duration="11770000" />
+      <workItem from="1706297223589" duration="3088000" />
+      <workItem from="1706345294403" duration="361000" />
     </task>
     <servers />
   </component>

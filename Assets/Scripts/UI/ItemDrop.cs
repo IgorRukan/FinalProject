@@ -30,7 +30,6 @@ public class ItemDrop : MonoBehaviour
         {
             var dropItem = Instantiate(item);
             //dropItem.transform.position = pos;
-            dropItem.transform.Rotate(0f, 180f, 0f);
             // dropItem.transform.position = Vector3.Lerp(dropItem.transform.position,
             //     new Vector3(dropItem.transform.position.x-3f, dropItem.transform.position.y+10f,
             //         dropItem.transform.position.z)

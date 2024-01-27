@@ -8,6 +8,8 @@ public class ItemSlotManager : MonoBehaviour
 
     public InventorySlot[] inventorySlots;
     public InventorySlot[] equippedSlots;
+
+    public EquipMenu equipMenu;
     
     public void AddItem(Items item)
     {
@@ -19,14 +21,22 @@ public class ItemSlotManager : MonoBehaviour
                 slot.currentItem = item;
                 slot.ShowItem();
                 item.ItemSetCurrentSlot(slot);
+                item.OnClicked += OnItemClicked;
                 break;
             }
         }
     }
 
+    public void OnItemClicked(Items clickedItem)
+    {
+        equipMenu.gameObject.SetActive(true);
+        equipMenu.SetItem(clickedItem);
+    }
+    
     public void RemoveItem(Items item)
     {
         items.Remove(item);
+        item.OnClicked -= OnItemClicked;
     }
     
 }
