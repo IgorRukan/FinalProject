@@ -59,6 +59,10 @@ public class TreeMine : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         player = other.GetComponent<BasePlayer>();
+        if (!player)
+        {
+            return;
+        }
         if (!player.GetComponent<Stats>().isMinening)
         {
             Mine();

@@ -12,6 +12,8 @@ public class BasePlayer : DamageableObject
     private Animations animations;
     public float rotateSpeed = 2f;
 
+    public GameObject test;
+
     public Animator CharacterAnimator
     {
         get { return animator = animator ?? GetComponent<Animator>(); }
@@ -41,13 +43,7 @@ public class BasePlayer : DamageableObject
 
     private void Update()
     {
-        // movementComponent.Move(movement);
-        // animations.SetMovement(movement);
-        // if (Mathf.Abs(movement.magnitude) > 0.05f)
-        // {
-        //     transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(movement),
-        //         Time.deltaTime * rotateSpeed);
-        // }
+        //transform.LookAt(test.transform);
     }
 
     public override HealthSystem GetHealthSystem()

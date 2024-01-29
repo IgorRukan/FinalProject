@@ -4,11 +4,11 @@ using UnityEngine;
 public class Shoot : MonoBehaviour
 {
     private float shootingRate;
+    public Transform shootPoint;
     public PerceptionComponent pc;
 
     public DamageableObject target;
     private float time;
-    public Transform shootPos;
 
     public bool inRange;
 
@@ -42,7 +42,7 @@ public class Shoot : MonoBehaviour
         var bul = pool.GetPooledObjects();
         bul.GetComponent<DamageSystem>().damageAmount = GetComponent<StatImpact>().GetBulletDamage();
         bul.gameObject.SetActive(true);
-        bul.transform.position = position;
+        bul.transform.position = shootPoint.position;
         bul.transform.rotation = rotation;
 
         bul.SetTarget(target.transform);

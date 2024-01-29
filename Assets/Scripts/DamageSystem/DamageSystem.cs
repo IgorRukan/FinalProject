@@ -26,8 +26,6 @@ public class DamageSystem : MonoBehaviour
 
                 if (!damagable.GetComponent<BasePlayer>())
                 {
-                    Debug.Log(ObjectsManager.Instance.player);
-                    Debug.Log(ObjectsManager.Instance.player.GetComponent<StatImpact>());
                     ObjectsManager.Instance.player.GetComponent<StatImpact>().LifeSteal();
                 }
 

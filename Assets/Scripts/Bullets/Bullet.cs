@@ -16,7 +16,7 @@ public class Bullet : MonoBehaviour
     }
     public void Shoot(Vector3 dir)
     {
-        rBody.AddForce(Vector3.forward * force, ForceMode.Impulse);
+        rBody.AddForce(dir * force, ForceMode.Impulse);
         rBody.velocity = new Vector3(0f,0f,0f);
     }
 

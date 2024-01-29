@@ -22,6 +22,8 @@ public class FightAI : MonoBehaviour
         target = GetComponent<PerceptionComponent>().GetTarget();
         if (target == null)
         {
+            var direction = new Vector3(0, 0, 0);
+            animations.SetMovement(direction);
             return;
         }
 
