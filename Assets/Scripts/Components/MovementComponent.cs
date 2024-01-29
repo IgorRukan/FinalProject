@@ -4,25 +4,18 @@ public class MovementComponent : MonoBehaviour
 {
     public CharacterController characterController;
     public float gravity = -9.81f;
-
-    private Stats stats;
-
+    
     private CharacterController Controller
     {
         get { return characterController = characterController ? characterController : GetComponent<CharacterController>(); }
     }
 
-    private void Start()
-    {
-        stats = GetComponent<Stats>();
-    }
-
 
     public void Move(Vector3 movement)
     {
-
+        var speed = GetComponent<StatImpact>().GetSpeed();
         movement.y = gravity;
-        Vector3 displacement = movement * stats.speed * Time.deltaTime;
+        Vector3 displacement = movement * speed * Time.deltaTime;
         Controller.Move(displacement);
     }
 }

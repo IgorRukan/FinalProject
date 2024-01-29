@@ -45,7 +45,7 @@ public class Stats : MonoBehaviour
         pickaxeSpeed,
         wood
     }
-    
+
     private void Start()
     {
         if (bigAttackRange == 0)
@@ -53,9 +53,9 @@ public class Stats : MonoBehaviour
             BigRangeCheck();
         }
 
-        if (GetComponent<BasePlayer>() != null)
+        if (GetComponent<StatManager>())
         {
-            GetComponent<Experience>().LvlUp += LevelUp;
+            ObjectsManager.Instance.player.GetComponent<Experience>().LvlUp += LevelUp;
         }
     }
 
@@ -63,11 +63,41 @@ public class Stats : MonoBehaviour
     {
         AddStat(Stat.damage, 1);
         AddStat(Stat.armor, 0.05f);
+        AddStat(Stat.lifesteal, 0.05f);
         AddStat(Stat.speed, 0.005f);
         AddStat(Stat.attackRange, 0.1f);
         AddStat(Stat.attackSpeed, -0.01f);
         AddStat(Stat.hpRegen, 0.5f);
+        AddStat(Stat.maxHealth,maxHealth);
         BigRangeCheck();
+    }
+
+    public void AddAllStats(Stats addedStats, bool add)
+    {
+        float sign;
+        if (add)
+        {
+            sign = 1f;
+        }
+        else
+        {
+            sign = -1f;
+        }
+
+        AddStat(Stat.damage, sign * addedStats.damage);
+        AddStat(Stat.armor, sign * addedStats.armor);
+        AddStat(Stat.speed, sign * addedStats.speed);
+        AddStat(Stat.attackRange, sign * addedStats.attackRange);
+        AddStat(Stat.attackSpeed, sign * addedStats.attackSpeed);
+        AddStat(Stat.hpRegen, sign * addedStats.hpRegen);
+        AddStat(Stat.maxHealth, sign * addedStats.maxHealth);
+        AddStat(Stat.crit, sign * addedStats.crit);
+        AddStat(Stat.critChance, sign * addedStats.critChance);
+        AddStat(Stat.bonusExp, sign * addedStats.bonusExp);
+        AddStat(Stat.axeDamage, sign * addedStats.axeDamage);
+        AddStat(Stat.axeSpeed, sign * addedStats.axeSpeed);
+        AddStat(Stat.pickaxeDamage, sign * addedStats.pickaxeDamage);
+        AddStat(Stat.pickaxeSpeed, sign * addedStats.pickaxeSpeed);
     }
 
     public void AddStat(Stat statName, float value)

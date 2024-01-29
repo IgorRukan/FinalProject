@@ -31,23 +31,26 @@ public class EquipMenu : MonoBehaviour
             if (slot.type.Equals(item.type))
             {
                 var prevSlot = item.currentSlot;
+                var prevItem = item;
                 if (!slot.currentItem)
                 {
                     slot.currentItem = item;
-                    slot.currentItem.transform.position = slot.transform.position; // 1 - 1 , 2 -2 : 1 - 2, 2 - 1. 
+                    slot.currentItem.transform.position = slot.transform.position;
                     slot.currentItem.currentSlot = slot;
                     prevSlot.currentItem = null;
+                    prevItem = null;
                 }
                 else
                 {
-
                     (item, slot.currentItem) = (slot.currentItem, item);
                     slot.currentItem.transform.position = slot.transform.position;
                     slot.currentItem.currentSlot = slot;
 
                     item.transform.position = prevSlot.transform.position;
                     item.currentSlot = prevSlot;
+                    prevItem = item;
                 }
+                StatManager.Instance.ChangeEquippedItem(slot,prevItem);
             }
         }
     }

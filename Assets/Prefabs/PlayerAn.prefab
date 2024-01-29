@@ -510,6 +510,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2e499b750f142c141a3572b412c549ed, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3125832874392592691}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2e499b750f142c141a3572b412c549ed, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1261763133326654079}
   m_SourcePrefab: {fileID: 100100000, guid: 2e499b750f142c141a3572b412c549ed, type: 3}
 --- !u!1 &1673464500338316193 stripped
 GameObject:
@@ -736,19 +739,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 153d495ae72475b4090d61622adab9ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 20
+  damage: 50
   armor: 0
   lifesteal: 0
-  speed: 20
-  attackRange: 10
+  speed: 10
+  attackRange: 3
   bigAttackRange: 0
   attackSpeed: 1
-  maxHealth: 0
+  maxHealth: 10
   hpRegen: 0
   crit: 0
   critChance: 0
   bonusExp: 0
-  axeDamage: 500
+  axeDamage: 50
   axeSpeed: 1
   pickaxeDamage: 2
   pickaxeSpeed: 1
@@ -766,9 +769,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61684bda6c9f29645b955cf123073506, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  exp: 350
-  maxExp: 125
+  exp: 0
+  maxExp: 100
   lvl: 0
+--- !u!114 &1261763133326654079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1673464500338316193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cfb4743faa763d49abd19aff7942c74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  money: 0
+  wood: 0
+  stone: 0
+  gems: 0
+  moneyTxt: {fileID: 0}
+  woodTxt: {fileID: 0}
+  stoneTxt: {fileID: 0}
+  gemsTxt: {fileID: 0}
 --- !u!4 &2049849988180347163 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2e499b750f142c141a3572b412c549ed, type: 3}

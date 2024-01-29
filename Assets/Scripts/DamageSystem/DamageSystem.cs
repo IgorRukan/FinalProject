@@ -23,8 +23,13 @@ public class DamageSystem : MonoBehaviour
                 damagable = other.GetComponent<HealthSystem>();
 
                 damagable.GetDamage(damageAmount);
-                
-                damagable.LifeSteal();
+
+                if (!damagable.GetComponent<BasePlayer>())
+                {
+                    Debug.Log(ObjectsManager.Instance.player);
+                    Debug.Log(ObjectsManager.Instance.player.GetComponent<StatImpact>());
+                    ObjectsManager.Instance.player.GetComponent<StatImpact>().LifeSteal();
+                }
 
                 if (damagePeriod > 0)
                 {

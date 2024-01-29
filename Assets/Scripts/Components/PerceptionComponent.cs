@@ -12,6 +12,10 @@ public class PerceptionComponent : MonoBehaviour
     public GameObject closestObj;
     public List<GameObject> targets;
 
+    public LayerMask nearEnemyMask;
+    public float nearestEnemyDistance;
+    public List<GameObject> nearestEnemy;
+
     private Stats stats;
 
     private void Start()
@@ -21,7 +25,8 @@ public class PerceptionComponent : MonoBehaviour
 
     private void Update()
     {
-        GetTargets();
+        GetTargets(targetMask,targets,SearchRadius);
+        GetTargets(nearEnemyMask,nearestEnemy,nearestEnemyDistance);
         ClosestTarget();
     }
 
@@ -33,20 +38,20 @@ public class PerceptionComponent : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, bigDistance);
     }
 
-    private void GetTargets()
+    private void GetTargets(LayerMask target, List<GameObject> targetList,float searchRadius)
     {
-        var objectsInRadius = Physics.OverlapSphere(transform.position, SearchRadius);
+        var objectsInRadius = Physics.OverlapSphere(transform.position, searchRadius);
 
         for (int i = 0; i < objectsInRadius.Length; i++)
         {
-            if ((targetMask.value & (1 << objectsInRadius[i].gameObject.layer)) != 0)
+            if ((target.value & (1 << objectsInRadius[i].gameObject.layer)) != 0)
             {
-                if (targets.Contains(objectsInRadius[i].gameObject))
+                if (targetList.Contains(objectsInRadius[i].gameObject))
                 {
                     continue;
                 }
 
-                targets.Add(objectsInRadius[i].gameObject);
+                targetList.Add(objectsInRadius[i].gameObject);
             }
         }
 
@@ -75,6 +80,11 @@ public class PerceptionComponent : MonoBehaviour
             return null;
         }
         return closestObj.GetComponent<DamageableObject>();
+    }
+
+    public void SetTarget(DamageableObject target)
+    {
+        closestObj = target.gameObject;
     }
 
     private void ClosestTarget()

@@ -4,39 +4,21 @@ using Random = UnityEngine.Random;
 
 public class HealthSystem : MonoBehaviour
 {
-    [SerializeField]private float maxHealth;
-    [SerializeField] private float currentHealth;
+    [SerializeField] private float maxHealth;
+    [SerializeField] public float currentHealth;
     [SerializeField] private float AutoHealPeriod = -1;
-    [SerializeField] private float AutoHealValue;
+    [SerializeField] public float AutoHealValue;
 
     private float time;
 
     private float currentHealthPercentage;
 
     public event Action<GameObject> Death;
-
     public event Action<float> ChangeHealth;
-
-    private Stats stats;
-
-    private Experience experience;
 
     private void Start()
     {
         Init();
-        stats = GetComponent<Stats>();
-        if (GetComponent<BasePlayer>())
-        {
-            experience = GetComponent<Experience>();
-            experience.LvlUp += LvlUp;    
-        }
-        
-    }
-
-    private void LvlUp()
-    {
-        maxHealth += stats.maxHealth;
-        AutoHealValue = stats.hpRegen;
     }
 
     public void Init()
@@ -73,14 +55,7 @@ public class HealthSystem : MonoBehaviour
 
     public void GetDamage(float value)
     {
-        var crit = Random.Range(0, 100);
-        var critDamage = 0f;
-        if (stats.critChance >= crit)
-        {
-            critDamage = stats.crit;
-        }
-
-        currentHealth -= value + value * (critDamage / 100f) - stats.armor * value;
+        GetComponent<StatImpact>().GetDamage(value);
         CheckIsDead();
         ChangeHealthIv();
     }
@@ -98,10 +73,10 @@ public class HealthSystem : MonoBehaviour
         ChangeHealth?.Invoke(currentHealthPercentage);
     }
 
-    public void OnRevival()
-    {
-        Init();
-    }
+    // public void OnRevival()
+    // {
+    //     Init();
+    // }
 
     private void CheckIsDead()
     {
@@ -109,7 +84,6 @@ public class HealthSystem : MonoBehaviour
         {
             Death?.Invoke(gameObject);
             currentHealth = 0;
-            Debug.Log("Death");
         }
     }
 
@@ -123,8 +97,8 @@ public class HealthSystem : MonoBehaviour
             return;
         }
 
-            if (currentHealth >= maxHealth)
-                return;
+        if (currentHealth >= maxHealth)
+            return;
 
         time += Time.deltaTime;
         if (time > period)
@@ -132,11 +106,6 @@ public class HealthSystem : MonoBehaviour
             AddHealth(value);
             time -= period;
         }
-    }
-
-    public void LifeSteal()
-    {
-        currentHealth += stats.lifesteal * stats.damage;
     }
 
     private void Update()

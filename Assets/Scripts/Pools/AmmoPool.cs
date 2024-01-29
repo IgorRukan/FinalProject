@@ -13,24 +13,29 @@ public class AmmoPool : MonoBehaviour
         pooledObjects = new List<Bullet>();
         for (int i = 0; i < amountToPool; i++)
         {
-            var go = Instantiate(prefab, transform.position, Quaternion.identity);
-            go.transform.SetParent(transform);
-            go.gameObject.SetActive(false);
-            pooledObjects.Add(go);
+           AddSlot();
         }
+    }
+
+    private void AddSlot()
+    {
+        var go = Instantiate(prefab, transform.position, Quaternion.identity);
+        go.transform.SetParent(transform);
+        go.gameObject.SetActive(false);
+        pooledObjects.Add(go);
     }
 
     public Bullet GetPooledObjects()
     {
-        for (int i = 0; i < pooledObjects.Count; i++)
+        foreach (var pooledObject in pooledObjects)
         {
-            if (!pooledObjects[i].gameObject.activeInHierarchy)
+            if (!pooledObject.gameObject.activeInHierarchy)
             {
-                return pooledObjects[i];
+                return pooledObject;
             }
         }
-
-        return null;
+        AddSlot();
+        return pooledObjects[pooledObjects.Count-1];
     }
 }
 

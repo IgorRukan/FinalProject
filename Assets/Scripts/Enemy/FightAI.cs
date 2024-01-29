@@ -2,16 +2,19 @@ using UnityEngine;
 
 public class FightAI : MonoBehaviour
 {
-    
     public DamageableObject target;
     private MovementComponent mc;
 
     private Animations animations;
 
+    public Vector3 startPos;
+
+
     private void Start()
     {
         mc = GetComponent<MovementComponent>();
         animations = GetComponent<Animations>();
+        startPos = GetComponent<Transform>().position;
     }
 
     private void Update()
@@ -21,12 +24,24 @@ public class FightAI : MonoBehaviour
         {
             return;
         }
+
         Fight();
     }
 
     private void Fight()
     {
         Attack(target);
+        var pc = GetComponent<PerceptionComponent>();
+        if (pc.nearestEnemy != null)
+        {
+            foreach (var enemy in pc.nearestEnemy)
+            {
+                if (enemy.GetComponent<PerceptionComponent>().GetTarget() == null)
+                {
+                    enemy.GetComponent<PerceptionComponent>().SetTarget(target);
+                }
+            }
+        }
     }
 
     private void Attack(DamageableObject opponent)
@@ -37,9 +52,8 @@ public class FightAI : MonoBehaviour
             direction = opponent.transform.position - transform.position;
 
             direction.Normalize();
-            
+
             mc.Move(direction);
-            //Debug.Log("move "+direction);
             animations.SetMovement(direction);
         }
         else

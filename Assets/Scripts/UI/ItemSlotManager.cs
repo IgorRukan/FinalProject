@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemSlotManager : MonoBehaviour
+public class ItemSlotManager : Singleton<ItemSlotManager>
 {
     public List<Items> items;
 
@@ -10,6 +10,10 @@ public class ItemSlotManager : MonoBehaviour
     public InventorySlot[] equippedSlots;
 
     public EquipMenu equipMenu;
+
+    public ItemRecieveMes itemRecieveMessage;
+    
+    public Items itemPrefab;
     
     public void AddItem(Items item)
     {

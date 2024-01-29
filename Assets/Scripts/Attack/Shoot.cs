@@ -40,7 +40,7 @@ public class Shoot : MonoBehaviour
         Quaternion rotation = Quaternion.LookRotation(dir, Vector3.up);
 
         var bul = pool.GetPooledObjects();
-        bul.GetComponent<DamageSystem>().damageAmount = stats.damage;
+        bul.GetComponent<DamageSystem>().damageAmount = GetComponent<StatImpact>().GetBulletDamage();
         bul.gameObject.SetActive(true);
         bul.transform.position = position;
         bul.transform.rotation = rotation;

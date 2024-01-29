@@ -20,7 +20,9 @@ public class ItemDrop : MonoBehaviour
 
     private void Start()
     {
-        itemSlotManager = FindObjectOfType<ItemSlotManager>();
+        itemSlotManager = ItemSlotManager.Instance;
+        itemReceivedWindow = itemSlotManager.itemRecieveMessage;
+        item = itemSlotManager.itemPrefab;
     }
 
     public void DropItem(Vector3 pos)
@@ -29,11 +31,6 @@ public class ItemDrop : MonoBehaviour
         if (value <= dropChanse)
         {
             var dropItem = Instantiate(item);
-            //dropItem.transform.position = pos;
-            // dropItem.transform.position = Vector3.Lerp(dropItem.transform.position,
-            //     new Vector3(dropItem.transform.position.x-3f, dropItem.transform.position.y+10f,
-            //         dropItem.transform.position.z)
-            //     , 2f);
 
             dropItem.transform.SetParent(itemCanvas);
             
