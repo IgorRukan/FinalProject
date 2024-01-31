@@ -44,4 +44,10 @@ public class Animations : MonoBehaviour
     {
         animator.SetTrigger(mineState ? "MineTree" : "StopMining");
     }
+
+    public void StopCurrentAnimation()
+    {
+        AnimatorStateInfo currentState = animator.GetCurrentAnimatorStateInfo(0);
+        animator.StopPlayback();
+    }
 }

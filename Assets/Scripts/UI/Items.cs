@@ -2,9 +2,10 @@ using System;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
-public class Items : MonoBehaviour,IPointerEnterHandler
+public class Items : MonoBehaviour, IPointerEnterHandler
 {
     public Action<Items> OnClicked;
 
@@ -13,7 +14,7 @@ public class Items : MonoBehaviour,IPointerEnterHandler
     public CreateItems.Quality quality;
 
     public CreateItems createItems;
-    
+
     private Stats stats;
 
     public InventorySlot currentSlot;
@@ -23,20 +24,29 @@ public class Items : MonoBehaviour,IPointerEnterHandler
 
     public GameObject equipMenu;
 
+    private Color back = Color.blue;
+    
+    
+
     private void Start()
     {
         stats = GetComponent<Stats>();
         createItems = FindObjectOfType<CreateItems>();
-        createItems.SetStats(stats,this);
+        createItems.SetStats(stats, this);
         equipMenu = GameObject.FindGameObjectWithTag("EquipItemMenu");
     }
 
-    public void SetParam(CreateItems.Type t, CreateItems.Quality q, Stats.Stat[] st, float[] statV)
+    public void SetParam(CreateItems.Type t, CreateItems.Quality q, Stats.Stat[] st, float[] statV,
+        Sprite backgroundColor, Sprite icon)
     {
         type = t;
         quality = q;
         stat = st;
         statValue = statV;
+        transform.Find("Background").GetComponent<Image>().sprite = backgroundColor;
+        transform.Find("ItemIcon").GetComponent<Image>().sprite = icon;
+        
+        
     }
 
     public void ItemSetCurrentSlot(InventorySlot curSlot)

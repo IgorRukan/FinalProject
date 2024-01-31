@@ -8,6 +8,7 @@ public class JoystickMovement : MonoBehaviour
 {
     [SerializeField] Joystick joystick;
     [SerializeField] MovementComponent movementComponent;
+    private Vector3 movement;
 
     Animator animator;
     private Animations animations;
@@ -28,13 +29,24 @@ public class JoystickMovement : MonoBehaviour
     {
         float inputHorizontal = joystick.Horizontal;
         float inputVertical = joystick.Vertical;
-        Vector3 movement = new Vector3(inputHorizontal, 0, inputVertical);
+        movement = new Vector3(inputHorizontal, 0, inputVertical);
         movementComponent.Move(movement);
         animations.SetMovement(movement);
+        
         if (Mathf.Abs(movement.magnitude) > 0.05f)
         {
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(movement),
                 Time.deltaTime * rotateSpeed);
         }
+    }
+    
+    public bool IsStay()
+    {
+        if (movement != Vector3.zero)
+        {
+            return false;
+        }
+
+        return true;
     }
 }

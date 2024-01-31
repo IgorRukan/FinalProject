@@ -15,10 +15,11 @@ public class Shoot : MonoBehaviour
     private Animations animations;
 
     public DamageableObject current;
-    
+
     private Stats stats;
-    
+
     public AmmoPool pool;
+
     private void Start()
     {
         pc = GetComponent<PerceptionComponent>();
@@ -67,11 +68,15 @@ public class Shoot : MonoBehaviour
         target = pc.GetTarget();
         if (target == null)
         {
+            stats.isFight = false;
             GetComponent<Animations>().AttackAnimation(false);
             return;
         }
-        IsInRange();
 
+        IsInRange();
+        
+        stats.isFight = true;
+        
         time += Time.deltaTime;
 
         if (animations.movement == Vector3.zero)
@@ -79,7 +84,7 @@ public class Shoot : MonoBehaviour
             GetComponent<Animations>().AttackAnimation(true);
 
             shootingRate = stats.attackSpeed;
-            
+
             if (time > shootingRate)
             {
                 Shooting();

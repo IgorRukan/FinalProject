@@ -35,6 +35,7 @@ public class ItemSlotManager : Singleton<ItemSlotManager>
     {
         equipMenu.gameObject.SetActive(true);
         equipMenu.SetItem(clickedItem);
+        equipMenu.SetUIElements(clickedItem);
     }
     
     public void RemoveItem(Items item)

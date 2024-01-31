@@ -12,8 +12,6 @@ public class BasePlayer : DamageableObject
     private Animations animations;
     public float rotateSpeed = 2f;
 
-    public GameObject test;
-
     public Animator CharacterAnimator
     {
         get { return animator = animator ?? GetComponent<Animator>(); }
@@ -41,16 +39,11 @@ public class BasePlayer : DamageableObject
         movement = new Vector3(inputValue.x, 0, inputValue.y);
     }
 
-    private void Update()
-    {
-        //transform.LookAt(test.transform);
-    }
-
     public override HealthSystem GetHealthSystem()
     {
         return gameObject.GetComponent<HealthSystem>();
     }
-    
+
     public override int GetReward()
     {
         int a = 0;

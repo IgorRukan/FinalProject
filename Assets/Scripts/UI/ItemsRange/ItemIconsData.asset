@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e641336180df7d4a8830286ad4b4b39, type: 3}
+  m_Name: ItemIconsData
+  m_EditorClassIdentifier: 
+  headIcon: {fileID: 21300000, guid: f31bc878393c9554c995c8cac9baf94b, type: 3}
+  armorIcon: {fileID: 21300000, guid: 3bb8cd8c7ddf01240baed7bdb30418d0, type: 3}
+  trousersIcon: {fileID: 21300000, guid: 99a288b62912ab2419831e04fcd5f7fa, type: 3}
+  glovesIcon: {fileID: 21300000, guid: 44e9013a80d86ca43813fc240312e56c, type: 3}
+  bracerIcon: {fileID: 21300000, guid: 40183b562e054ac4d8f83faa7bdfa68e, type: 3}
+  bootsIcon: {fileID: 21300000, guid: fd5c409ad72f72d489c8f5bd11e63b14, type: 3}
+  ringIcon: {fileID: 21300000, guid: 0192e61327ba5eb4fb4d250481672188, type: 3}
+  weaponIcon: {fileID: 21300000, guid: 92fe07de6e1478c4abe43e2daa0d02d2, type: 3}
+  grey: {fileID: 21300000, guid: d0f9961fc19bd7c4c97795a8e8f2ce12, type: 3}
+  green: {fileID: 21300000, guid: ef04152051ccf694f8f2ee3577c8f901, type: 3}
+  blue: {fileID: 21300000, guid: 1ffc50e6c62bf2a48b2db9facd3c9cc6, type: 3}
+  purple: {fileID: 21300000, guid: 4fff42b29c324874fb4a785872af26c3, type: 3}
+  gold: {fileID: 21300000, guid: cb669ef11926f834fadc23c82c14fbec, type: 3}
+  orange: {fileID: 21300000, guid: 4ffa059fb0e791a41af606aa822657a3, type: 3}

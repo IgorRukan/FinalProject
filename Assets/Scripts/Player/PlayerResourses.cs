@@ -13,14 +13,23 @@ public class PlayerResources : MonoBehaviour
 
     public TextMeshProUGUI moneyTxt;
     public TextMeshProUGUI woodTxt;
-    public TextMeshProUGUI stoneTxt;
+    public TextMeshProUGUI metalTxt;
     public TextMeshProUGUI gemsTxt;
     
     public enum resourses{
         money,
         wood,
-        stone,
+        metal,
         gems
+    }
+
+    private void Start()
+    {
+        var uiManager = UIElementsManager.Instance;
+        moneyTxt = uiManager.moneyText;
+        woodTxt = uiManager.woodText;
+        metalTxt = uiManager.metalText;
+        gemsTxt = uiManager.gemsText;
     }
 
     public void AddOrTakeResourse(resourses resourceName, int value, int sign)
@@ -55,7 +64,7 @@ public class PlayerResources : MonoBehaviour
     {
         moneyTxt.text = money.ToString();
         woodTxt.text = wood.ToString();
-        stoneTxt.text = stone.ToString();
+        metalTxt.text = stone.ToString();
         gemsTxt.text = gems.ToString();
     }
 

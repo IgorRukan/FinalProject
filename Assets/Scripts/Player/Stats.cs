@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[Serializable]
 public class Stats : MonoBehaviour
 {
     public float damage; // lvl +1
@@ -21,10 +22,13 @@ public class Stats : MonoBehaviour
     public float axeSpeed; // only buy
     public float pickaxeDamage; // only buy
     public float pickaxeSpeed; // only buy
-
-    public float wood;
-
+    
     public bool isMinening = false;
+    public bool isFight = false;
+
+    public Stat itemFirstStat;
+    public Stat itemSecondStat;
+    
 
     public enum Stat
     {
@@ -42,8 +46,11 @@ public class Stats : MonoBehaviour
         axeDamage,
         axeSpeed,
         pickaxeDamage,
-        pickaxeSpeed,
-        wood
+        pickaxeSpeed
+    }
+
+    public Stats()
+    {
     }
 
     private void Start()
@@ -70,6 +77,20 @@ public class Stats : MonoBehaviour
         AddStat(Stat.hpRegen, 0.5f);
         AddStat(Stat.maxHealth,maxHealth);
         BigRangeCheck();
+    }
+
+    public float StatValue(Stat statName)
+    {
+        float value = 0f;
+        
+        var field = GetType().GetField(statName.ToString());
+        
+        if (field != null && field.FieldType == typeof(float))
+        {
+            value = (float)field.GetValue(this);
+        }
+        
+        return value;
     }
 
     public void AddAllStats(Stats addedStats, bool add)
@@ -116,6 +137,28 @@ public class Stats : MonoBehaviour
         {
             Debug.LogError("Invalid stat name or type: " + statName);
         }
+    }
+
+    public void SetParam(StatsSave playerStats)
+    {
+        damage = playerStats.damage;
+        attackSpeed = playerStats.attackSpeed;
+        attackRange = playerStats.attackRange;
+        crit = playerStats.crit;
+        critChance = playerStats.critChance;
+        speed = playerStats.speed;
+        armor = playerStats.armor;
+        maxHealth = playerStats.maxHealth;
+        hpRegen = playerStats.hpRegen;
+        lifesteal = playerStats.lifesteal;
+        bonusExp = playerStats.bonusExp;
+        axeDamage = playerStats.axeDamage;
+        axeSpeed = playerStats.axeSpeed;
+        pickaxeDamage = playerStats.pickaxeDamage;
+        pickaxeSpeed = playerStats.pickaxeSpeed;
+        isMinening = false;
+        itemFirstStat = Stat.armor;
+        itemSecondStat = Stat.armor;
     }
 
     private void BigRangeCheck()

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -8,26 +9,33 @@ public class TreeMine : MonoBehaviour
     private BasePlayer player;
     private int reward;
     private DamageableObject mineObject;
+    private Transform LookPoint;
+    private bool stopAnim = false;
 
     private void Start()
     {
         mineObject = GetComponentInParent<DamageableObject>();
-        
+
         hs = mineObject.GetHealthSystem();
         reward = mineObject.GetReward();
+        LookPoint = transform.Find("LookPoint");
     }
 
     private void Mine()
     {
         isMinening = true;
         player.GetComponent<Stats>().isMinening = true;
+        stopAnim = false;
         StartCoroutine(MineTree());
     }
 
     private void StopMine()
     {
+        stopAnim = true;
         isMinening = false;
         player.GetComponent<Stats>().isMinening = false;
+        player.GetComponent<Animations>().StopCurrentAnimation();
+        player.GetComponent<Animations>().MineTreeAnimation(false);
     }
 
     IEnumerator MineTree()
@@ -41,31 +49,46 @@ public class TreeMine : MonoBehaviour
                 yield break;
             }
 
-            hs.GetMineObjectDamage(player.GetComponent<Stats>().axeDamage);
-            player.GetComponent<Animations>().MineTreeAnimation(true);
-            yield return new WaitForSeconds(player.GetComponent<Stats>().axeSpeed);
-            player.GetComponent<Animations>().MineTreeAnimation(false);
+            if (player.GetComponent<Stats>().isFight)
+            {
+                yield break;
+            }
+
+            if (!stopAnim)
+            {
+                player.GetComponent<Animations>().MineTreeAnimation(true);
+                player.transform.LookAt(LookPoint);
+                yield return new WaitForSeconds(player.GetComponent<Stats>().axeSpeed);
+                hs.GetMineObjectDamage(player.GetComponent<Stats>().axeDamage);
+                player.GetComponent<Animations>().MineTreeAnimation(false);
+            }
+
         }
     }
 
     private void OnDeath(GameObject go)
     {
-        player.GetComponent<PlayerResources>().AddOrTakeResourse(PlayerResources.resourses.wood, reward,1);
+        player.GetComponent<PlayerResources>().AddOrTakeResourse(PlayerResources.resourses.wood, reward, 1);
         hs.Death -= OnDeath;
         isMinening = false;
         player.GetComponent<Stats>().isMinening = false;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         player = other.GetComponent<BasePlayer>();
         if (!player)
         {
             return;
         }
-        if (!player.GetComponent<Stats>().isMinening)
+
+        if (player.GetComponent<JoystickMovement>().IsStay().Equals(true)&&!isMinening)
         {
-            Mine();
+            if (!player.GetComponent<Stats>().isMinening)
+            {
+                player.transform.LookAt(LookPoint);
+                Mine();
+            }
         }
     }
 
