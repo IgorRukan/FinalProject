@@ -24,7 +24,8 @@ public class Items : MonoBehaviour, IPointerEnterHandler
 
     public GameObject equipMenu;
 
-    private Color back = Color.blue;
+    public Sprite backgroundColor = null;
+    public Sprite icon = null;
     
     
 
@@ -43,6 +44,8 @@ public class Items : MonoBehaviour, IPointerEnterHandler
         quality = q;
         stat = st;
         statValue = statV;
+        this.backgroundColor = backgroundColor;
+        this.icon = icon;
         transform.Find("Background").GetComponent<Image>().sprite = backgroundColor;
         transform.Find("ItemIcon").GetComponent<Image>().sprite = icon;
         

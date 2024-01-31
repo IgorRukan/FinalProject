@@ -12,5 +12,10 @@ public class InventorySlot : MonoBehaviour
     {
         currentItem.transform.position = transform.position;
     }
-    
+
+    public void RemoveItem()
+    {
+        currentItem = null;
+    }
+
 }

@@ -22,8 +22,8 @@ MonoBehaviour:
   speedMax: 12
   attackRangeMin: 6
   attackRangeMax: 8
-  attackSpeedMin: 0.25
-  attackSpeedMax: 0.3
+  attackSpeedMin: -0.25
+  attackSpeedMax: -0.3
   maxHealthMin: 250
   maxHealthMax: 400
   hpRegenMin: 5

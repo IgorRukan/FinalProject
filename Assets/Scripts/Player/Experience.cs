@@ -25,10 +25,7 @@ public class Experience : MonoBehaviour
     //         return lvlUpPoint;
     //     }
     // }
-
-    public Experience()
-    {
-    }
+    
 
     public event Action LvlUp;
     public event Action<int> ExpAdd;

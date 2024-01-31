@@ -9,9 +9,11 @@ public class SaveManager : MonoBehaviour
 
     private string filenamePlayerStats = "DataPlayerStats";
     private string filenamePlayerExp = "DataPlayerExp";
+    private string filenamePlayerItems = "DataPlayerItems";
+    private string filenamePlayerRes = "DataPlayerRes";
 
     public float timePerSave;
-    
+
     private void Awake()
     {
         player = ObjectsManager.Instance.player;
@@ -32,20 +34,49 @@ public class SaveManager : MonoBehaviour
     {
         Save.SavePlayerInfoJSON(filenamePlayerStats, GetPlayerStatInfo());
         Save.SavePlayerInfoJSON(filenamePlayerExp, GetPlayerExperienceInfo());
+        Save.SavePlayerInfoJSONlist(filenamePlayerItems, GetPlayerItemsInfo()); 
+        Save.SavePlayerInfoJSON(filenamePlayerRes, GetPlayerResInfo()); 
     }
 
     public void LoadData()
     {
         StatsSave statInfo = Save.LoadPlayerInfoJSON<StatsSave>(filenamePlayerStats);
         ExperienceSave expInfo = Save.LoadPlayerInfoJSON<ExperienceSave>(filenamePlayerExp);
-        player.GetComponent<Stats>().SetParam(statInfo);
-        player.GetComponent<Experience>().SetParam(expInfo);
+        PlayerResSave resInfo = Save.LoadPlayerInfoJSON<PlayerResSave>(filenamePlayerRes);
+        if (statInfo != null)
+        {
+            player.GetComponent<Stats>().SetParam(statInfo);
+        }
+
+        if (expInfo != null)
+        {
+            player.GetComponent<Experience>().SetParam(expInfo);
+        }
+        if (resInfo != null)
+        {
+            player.GetComponent<PlayerResources>().SetParam(resInfo);
+        }
+
+        // List<ItemsSave> itemInfo = Save.LoadPlayerInfoJSONList<ItemsSave>(filenamePlayerItems);
+        // if (itemInfo != null)
+        // {
+        //     var itemSlotManager = ItemSlotManager.Instance;
+        //     Items [] itemMas = new Items[itemInfo.Count];
+        //     int i = 0;
+        //     foreach (var item in itemInfo)
+        //     {
+        //         itemMas[i].SetParam(item.type, item.quality, item.stat, item.statValue,
+        //             item.backgroundColor, item.icon);
+        //         itemSlotManager.AddItem(itemMas[i]);
+        //         i++;
+        //     }
+        // }    не рабоатет
     }
 
     StatsSave GetPlayerStatInfo()
     {
         StatsSave info = new StatsSave();
-        
+
         Stats playerStats = player.GetComponent<Stats>();
 
         info.damage = playerStats.damage;
@@ -57,6 +88,7 @@ public class SaveManager : MonoBehaviour
         info.attackSpeed = playerStats.attackSpeed;
         info.maxHealth = playerStats.maxHealth;
         info.hpRegen = playerStats.hpRegen;
+        info.currentHp = playerStats.currentHp;
         info.crit = playerStats.crit;
         info.critChance = playerStats.critChance;
         info.bonusExp = playerStats.bonusExp;
@@ -73,9 +105,8 @@ public class SaveManager : MonoBehaviour
 
     ExperienceSave GetPlayerExperienceInfo()
     {
-        
         ExperienceSave info = new ExperienceSave();
-        
+
 
         Experience playerExp = player.GetComponent<Experience>();
 
@@ -88,5 +119,47 @@ public class SaveManager : MonoBehaviour
         return info;
     }
 
+    List<ItemsSave> GetPlayerItemsInfo()
+    {
+        List<ItemsSave> info = new List<ItemsSave>();
+        ItemsSave infoItem = new ItemsSave();
+
+        List<Items> playerItemsMas = ItemSlotManager.Instance.items;
+
+        foreach (var playerItems in playerItemsMas)
+        {
+            infoItem.type = playerItems.type;
+
+            infoItem.quality = playerItems.quality;
+
+            infoItem.currentSlot = playerItems.currentSlot;
+
+            infoItem.stat = playerItems.stat;
+
+            infoItem.statValue = playerItems.statValue;
+
+            infoItem.backgroundColor = playerItems.backgroundColor;
+
+            infoItem.icon = playerItems.icon;
+            
+            info.Add(infoItem);
+        }
+        return info;
+    }
     
+    PlayerResSave GetPlayerResInfo()
+    {
+        PlayerResSave info = new PlayerResSave();
+        
+        PlayerResources playerRes = player.GetComponent<PlayerResources>();
+
+        info.money = playerRes.money;
+
+        info.wood = playerRes.wood;
+
+        info.metal = playerRes.metal;
+        info.gems = playerRes.gems;
+
+        return info;
+    }
 }

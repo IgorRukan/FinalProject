@@ -11,12 +11,14 @@ public class StatManager : Singleton<StatManager>
 
     private ItemSlotManager itemSlotManager;
 
+    public Stats statsAddedPerLvl;
+
     private void Awake()
     {
         objectsManager = ObjectsManager.Instance;
         itemSlotManager = ItemSlotManager.Instance;
         currentStats = GetComponent<Stats>();
-        SetPlayerStats();
+        SetPlayerStats(objectsManager.player.GetComponent<Stats>());
         SetItemStats();
     }
 
@@ -40,12 +42,18 @@ public class StatManager : Singleton<StatManager>
         currentStats.AddAllStats(slot.currentItem.GetComponent<Stats>(),true);
     }
 
-    private void SetPlayerStats()
+    public void DeleteItem(Items prevItem)
     {
-        var player = objectsManager.player;
-        
-        var playerStats = player.GetComponent<Stats>();
-        
-        currentStats.AddAllStats(playerStats,true);
+        currentStats.AddAllStats(prevItem.GetComponent<Stats>(),false);
+    }
+
+    public Stats GetStatAddedPerLvl()
+    {
+        return statsAddedPerLvl;
+    }
+
+    public void SetPlayerStats(Stats statPerLevel)
+    {
+        currentStats.AddAllStats(statPerLevel,true);
     }
 }

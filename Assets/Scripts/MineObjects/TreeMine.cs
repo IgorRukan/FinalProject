@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using TMPro;
 using UnityEngine;
 
 public class TreeMine : MonoBehaviour
@@ -11,6 +12,7 @@ public class TreeMine : MonoBehaviour
     private DamageableObject mineObject;
     private Transform LookPoint;
     private bool stopAnim = false;
+    public TextMeshProUGUI rewardText;
 
     private void Start()
     {
@@ -19,6 +21,7 @@ public class TreeMine : MonoBehaviour
         hs = mineObject.GetHealthSystem();
         reward = mineObject.GetReward();
         LookPoint = transform.Find("LookPoint");
+        rewardText.text = reward.ToString();
     }
 
     private void Mine()

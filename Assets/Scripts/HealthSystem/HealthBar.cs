@@ -20,18 +20,26 @@ public class HealthBar : MonoBehaviour
         camera = Camera.main;
         healthBarFilling = transform.Find("HealthBar").GetComponent<Image>();
         healthSystem.ChangeHealth += OnHealthChanged;
+        healthSystem.Death += OnDeath;
         healthValueText = GetComponentInChildren<TextMeshProUGUI>();
     }
     
     private void OnHealthChanged(float percentageHealth)
     {
         healthBarFilling.fillAmount = percentageHealth;
-        healthValueText.text = healthSystem.GetCurrentHealth().ToString();
+        healthValueText.text = Math.Round(healthSystem.GetCurrentHealth(),0).ToString();
+    }
+
+    private void OnDeath(GameObject a)
+    {
+        healthBarFilling.fillAmount = healthSystem.maxHealth;
+        Debug.Log("EnemyDead");
+        healthValueText.text = Math.Round(healthSystem.GetCurrentHealth(),0).ToString();
     }
 
     private void LateUpdate()
     {
-        healthValueText.text = healthSystem.GetCurrentHealth().ToString();
+        healthValueText.text = Math.Round(healthSystem.GetCurrentHealth(),0).ToString();
         transform.LookAt(new Vector3(transform.position.x,camera.transform.position.y,camera.transform.position.z));
         transform.Rotate(0,180,0);
     }

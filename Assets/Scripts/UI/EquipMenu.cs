@@ -19,7 +19,7 @@ public class EquipMenu : MonoBehaviour
 
     private void Start()
     {
-        itemSlotManager = FindObjectOfType<ItemSlotManager>();
+        itemSlotManager = ItemSlotManager.Instance;
     }
 
     public void SetItem(Items item)
@@ -58,12 +58,26 @@ public class EquipMenu : MonoBehaviour
         }
     }
 
+    public void DeleteItem()
+    {
+        foreach (var slot in ItemSlotManager.Instance.equippedSlots)
+        {
+            if (item.Equals(slot.currentItem))
+            {
+                
+                StatManager.Instance.DeleteItem(item);
+            }
+        }
+        item.currentSlot.RemoveItem();
+        Destroy(item.gameObject);
+    }
+
     public void SetUIElements(Items curItem)
     {
         itemName.text = curItem.type.ToString();
         var itemStats = curItem.GetComponent<Stats>();
-        stat1Text.text = itemStats.itemFirstStat+" : "+Math.Round(itemStats.StatValue(itemStats.itemFirstStat),0);
-        stat2Text.text = itemStats.itemSecondStat+" : "+Math.Round(itemStats.StatValue(itemStats.itemSecondStat),0);
+        stat1Text.text = itemStats.itemFirstStat+" : "+Math.Round(itemStats.StatValue(itemStats.itemFirstStat),1);
+        stat2Text.text = itemStats.itemSecondStat+" : "+Math.Round(itemStats.StatValue(itemStats.itemSecondStat),1);
         icon.sprite = curItem.transform.Find("ItemIcon").GetComponent<Image>().sprite;
         background.sprite = curItem.transform.Find("Background").GetComponent<Image>().sprite;
     }

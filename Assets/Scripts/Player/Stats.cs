@@ -14,6 +14,7 @@ public class Stats : MonoBehaviour
     public float bigAttackRange;
     public float attackSpeed; // lvl + hz
     public float maxHealth; // lvl + 50hp
+    public float currentHp; // lvl + 50hp
     public float hpRegen; // lvl + 0.5hp
     public float crit; // only buy
     public float critChance; // only buy
@@ -39,6 +40,7 @@ public class Stats : MonoBehaviour
         attackRange,
         attackSpeed,
         maxHealth,
+        currentHp,
         hpRegen,
         crit,
         critChance,
@@ -49,18 +51,14 @@ public class Stats : MonoBehaviour
         pickaxeSpeed
     }
 
-    public Stats()
-    {
-    }
-
     private void Start()
     {
         if (bigAttackRange == 0)
         {
             BigRangeCheck();
         }
-
-        if (GetComponent<StatManager>())
+        
+        if (GetComponent<BasePlayer>())
         {
             ObjectsManager.Instance.player.GetComponent<Experience>().LvlUp += LevelUp;
         }
@@ -68,15 +66,20 @@ public class Stats : MonoBehaviour
 
     public void LevelUp()
     {
-        AddStat(Stat.damage, 1);
-        AddStat(Stat.armor, 0.05f);
-        AddStat(Stat.lifesteal, 0.05f);
-        AddStat(Stat.speed, 0.005f);
-        AddStat(Stat.attackRange, 0.1f);
-        AddStat(Stat.attackSpeed, -0.01f);
-        AddStat(Stat.hpRegen, 0.5f);
+        Stats statsPerLevel = StatManager.Instance.GetStatAddedPerLvl();
+        Debug.Log(statsPerLevel);
+        AddStat(Stat.damage, statsPerLevel.damage);
+        AddStat(Stat.armor, statsPerLevel.armor);
+        AddStat(Stat.lifesteal, statsPerLevel.lifesteal);
+        AddStat(Stat.speed, statsPerLevel.speed);
+        AddStat(Stat.attackRange, statsPerLevel.attackRange);
+        AddStat(Stat.attackSpeed, statsPerLevel.attackSpeed);
+        AddStat(Stat.hpRegen, statsPerLevel.hpRegen);
         AddStat(Stat.maxHealth,maxHealth);
+        
         BigRangeCheck();
+        
+        StatManager.Instance.SetPlayerStats(statsPerLevel);
     }
 
     public float StatValue(Stat statName)
@@ -119,6 +122,7 @@ public class Stats : MonoBehaviour
         AddStat(Stat.axeSpeed, sign * addedStats.axeSpeed);
         AddStat(Stat.pickaxeDamage, sign * addedStats.pickaxeDamage);
         AddStat(Stat.pickaxeSpeed, sign * addedStats.pickaxeSpeed);
+        AddStat(Stat.currentHp, sign * addedStats.currentHp);
     }
 
     public void AddStat(Stat statName, float value)
@@ -151,6 +155,7 @@ public class Stats : MonoBehaviour
         maxHealth = playerStats.maxHealth;
         hpRegen = playerStats.hpRegen;
         lifesteal = playerStats.lifesteal;
+        currentHp = playerStats.currentHp;
         bonusExp = playerStats.bonusExp;
         axeDamage = playerStats.axeDamage;
         axeSpeed = playerStats.axeSpeed;
@@ -159,6 +164,7 @@ public class Stats : MonoBehaviour
         isMinening = false;
         itemFirstStat = Stat.armor;
         itemSecondStat = Stat.armor;
+        
     }
 
     private void BigRangeCheck()

@@ -13,6 +13,7 @@ public class StatsSave
     public float bigAttackRange;
     public float attackSpeed; 
     public float maxHealth; 
+    public float currentHp; 
     public float hpRegen;
     public float crit; 
     public float critChance; 

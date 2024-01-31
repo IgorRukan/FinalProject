@@ -20,7 +20,7 @@ public class ItemSlotManager : Singleton<ItemSlotManager>
         items.Add(item);
         foreach (var slot in inventorySlots)
         {
-            if (!slot.currentItem)
+            if (!slot.currentItem && !item.currentSlot)
             {
                 slot.currentItem = item;
                 slot.ShowItem();

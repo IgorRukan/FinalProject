@@ -4,7 +4,7 @@ using Random = UnityEngine.Random;
 
 public class HealthSystem : MonoBehaviour
 {
-    [SerializeField] private float maxHealth;
+    public float maxHealth;
     [SerializeField] public float currentHealth;
     [SerializeField] private float AutoHealPeriod = -1;
     [SerializeField] public float AutoHealValue;
@@ -23,6 +23,10 @@ public class HealthSystem : MonoBehaviour
 
     public void Init()
     {
+        if (GetComponent<BasePlayer>())
+        {
+            maxHealth = GetComponent<StatImpact>().GetMaxHealth();
+        }
         currentHealth = maxHealth;
     }
 

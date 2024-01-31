@@ -713,7 +713,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &76793907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1173,6 +1173,7 @@ MonoBehaviour:
   bigAttackRange: 20
   attackSpeed: 1
   maxHealth: 0
+  currentHp: 0
   hpRegen: 0
   crit: 0
   critChance: 0
@@ -1181,8 +1182,8 @@ MonoBehaviour:
   axeSpeed: 0
   pickaxeDamage: 0
   pickaxeSpeed: 0
-  wood: 0
   isMinening: 0
+  isFight: 0
   itemFirstStat: 0
   itemSecondStat: 0
 --- !u!114 &89589489 stripped
@@ -1581,6 +1582,7 @@ MonoBehaviour:
   bigAttackRange: 20
   attackSpeed: 1
   maxHealth: 0
+  currentHp: 0
   hpRegen: 0
   crit: 0
   critChance: 0
@@ -1589,8 +1591,8 @@ MonoBehaviour:
   axeSpeed: 0
   pickaxeDamage: 0
   pickaxeSpeed: 0
-  wood: 0
   isMinening: 0
+  isFight: 0
   itemFirstStat: 0
   itemSecondStat: 0
 --- !u!114 &113585734 stripped
@@ -1678,6 +1680,10 @@ PrefabInstance:
     - target: {fileID: 5646036886447792721, guid: f86baffa965e59b4290d73b7f2f4a53a, type: 3}
       propertyPath: expForKill
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5646036886447792721, guid: f86baffa965e59b4290d73b7f2f4a53a, type: 3}
+      propertyPath: moneyForKill
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6908479084238250295, guid: f86baffa965e59b4290d73b7f2f4a53a, type: 3}
       propertyPath: maxHealth
@@ -1812,6 +1818,10 @@ PrefabInstance:
       propertyPath: expForKill
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 5646036886447792721, guid: f86baffa965e59b4290d73b7f2f4a53a, type: 3}
+      propertyPath: moneyForKill
+      value: 650
+      objectReference: {fileID: 0}
     - target: {fileID: 6908479084238250295, guid: f86baffa965e59b4290d73b7f2f4a53a, type: 3}
       propertyPath: maxHealth
       value: 750
@@ -1922,6 +1932,7 @@ MonoBehaviour:
   bigAttackRange: 20
   attackSpeed: 1
   maxHealth: 0
+  currentHp: 0
   hpRegen: 0
   crit: 0
   critChance: 0
@@ -1930,8 +1941,8 @@ MonoBehaviour:
   axeSpeed: 0
   pickaxeDamage: 0
   pickaxeSpeed: 0
-  wood: 0
   isMinening: 0
+  isFight: 0
   itemFirstStat: 0
   itemSecondStat: 0
 --- !u!114 &126938210 stripped
@@ -2036,6 +2047,85 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf032ab22f12e4898a2ef822a85c6316, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &132058497
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 132058498}
+  - component: {fileID: 132058500}
+  - component: {fileID: 132058499}
+  m_Layer: 0
+  m_Name: Text (Legacy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &132058498
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 132058497}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1552999497}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &132058499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 132058497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 208
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 238
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: X
+--- !u!222 &132058500
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 132058497}
+  m_CullTransparentMesh: 1
 --- !u!1001 &137910984
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2456,7 +2546,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &157845492
 Transform:
   m_ObjectHideFlags: 0
@@ -2749,6 +2839,7 @@ MonoBehaviour:
   bigAttackRange: 20
   attackSpeed: 1
   maxHealth: 0
+  currentHp: 0
   hpRegen: 0
   crit: 0
   critChance: 0
@@ -2757,8 +2848,8 @@ MonoBehaviour:
   axeSpeed: 0
   pickaxeDamage: 0
   pickaxeSpeed: 0
-  wood: 0
   isMinening: 0
+  isFight: 0
   itemFirstStat: 0
   itemSecondStat: 0
 --- !u!114 &183715391 stripped
@@ -2963,7 +3054,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -512, y: 1.5737}
+  m_AnchoredPosition: {x: -498, y: -0.026367188}
   m_SizeDelta: {x: 449.324, y: 375.045}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &193591912
@@ -3206,6 +3297,10 @@ PrefabInstance:
       propertyPath: expForKill
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 5646036886447792721, guid: f86baffa965e59b4290d73b7f2f4a53a, type: 3}
+      propertyPath: moneyForKill
+      value: 75
+      objectReference: {fileID: 0}
     - target: {fileID: 6908479084238250295, guid: f86baffa965e59b4290d73b7f2f4a53a, type: 3}
       propertyPath: maxHealth
       value: 50
@@ -3402,6 +3497,7 @@ MonoBehaviour:
   bigAttackRange: 20
   attackSpeed: 1
   maxHealth: 0
+  currentHp: 0
   hpRegen: 0
   crit: 0
   critChance: 0
@@ -3410,8 +3506,8 @@ MonoBehaviour:
   axeSpeed: 0
   pickaxeDamage: 0
   pickaxeSpeed: 0
-  wood: 0
   isMinening: 0
+  isFight: 0
   itemFirstStat: 0
   itemSecondStat: 0
 --- !u!114 &253804303 stripped
@@ -3466,6 +3562,7 @@ MonoBehaviour:
   bigAttackRange: 20
   attackSpeed: 1
   maxHealth: 0
+  currentHp: 0
   hpRegen: 0
   crit: 0
   critChance: 0
@@ -3474,8 +3571,8 @@ MonoBehaviour:
   axeSpeed: 0
   pickaxeDamage: 0
   pickaxeSpeed: 0
-  wood: 0
   isMinening: 0
+  isFight: 0
   itemFirstStat: 0
   itemSecondStat: 0
 --- !u!114 &260668008 stripped
@@ -3525,7 +3622,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 271302288}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3534,7 +3631,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 190.25, y: 1.5736}
+  m_AnchoredPosition: {x: 190.25009, y: -0.026611328}
   m_SizeDelta: {x: 244.13, y: 140.91}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &271302290
@@ -3566,8 +3663,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294946950
-  m_fontColor: {r: 0.5264151, g: 0.6899488, b: 1, a: 1}
+    rgba: 4294953597
+  m_fontColor: {r: 0.48867923, g: 0.79375297, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4030,7 +4127,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1456639940}
+  - {fileID: 2074882176}
   - {fileID: 583319465}
   - {fileID: 271302289}
   - {fileID: 193591911}
@@ -4038,8 +4135,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -487.63, y: 2301}
-  m_SizeDelta: {x: 624.638, y: 100}
+  m_AnchoredPosition: {x: -487.63, y: 2302.6}
+  m_SizeDelta: {x: 624.638, y: 140.87}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &306972087
 MonoBehaviour:
@@ -4054,7 +4151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6094339, g: 0.67297816, b: 1, a: 1}
+  m_Color: {r: 0.031169107, g: 0, b: 0.8867924, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4091,7 +4188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 711c65f651092d443a206833ff624d31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  experienceBarFilling: {fileID: 0}
+  experienceBarFilling: {fileID: 2074882177}
   expValueText: {fileID: 583319466}
   currentLvl: {fileID: 1886390915}
 --- !u!4 &312478403 stripped
@@ -4691,6 +4788,10 @@ PrefabInstance:
       propertyPath: expForKill
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 5646036886447792721, guid: f86baffa965e59b4290d73b7f2f4a53a, type: 3}
+      propertyPath: moneyForKill
+      value: 650
+      objectReference: {fileID: 0}
     - target: {fileID: 6908479084238250295, guid: f86baffa965e59b4290d73b7f2f4a53a, type: 3}
       propertyPath: maxHealth
       value: 350
@@ -4801,6 +4902,7 @@ MonoBehaviour:
   bigAttackRange: 20
   attackSpeed: 1
   maxHealth: 0
+  currentHp: 0
   hpRegen: 0
   crit: 0
   critChance: 0
@@ -4809,8 +4911,8 @@ MonoBehaviour:
   axeSpeed: 0
   pickaxeDamage: 0
   pickaxeSpeed: 0
-  wood: 0
   isMinening: 0
+  isFight: 0
   itemFirstStat: 0
   itemSecondStat: 0
 --- !u!114 &343340646 stripped
@@ -5384,6 +5486,7 @@ MonoBehaviour:
   bigAttackRange: 20
   attackSpeed: 1
   maxHealth: 0
+  currentHp: 0
   hpRegen: 0
   crit: 0
   critChance: 0
@@ -5392,8 +5495,8 @@ MonoBehaviour:
   axeSpeed: 0
   pickaxeDamage: 0
   pickaxeSpeed: 0
-  wood: 0
   isMinening: 0
+  isFight: 0
   itemFirstStat: 0
   itemSecondStat: 0
 --- !u!114 &399413935 stripped
@@ -5744,6 +5847,7 @@ MonoBehaviour:
   bigAttackRange: 20
   attackSpeed: 1
   maxHealth: 0
+  currentHp: 0
   hpRegen: 0
   crit: 0
   critChance: 0
@@ -5752,8 +5856,8 @@ MonoBehaviour:
   axeSpeed: 0
   pickaxeDamage: 0
   pickaxeSpeed: 0
-  wood: 0
   isMinening: 0
+  isFight: 0
   itemFirstStat: 0
   itemSecondStat: 0
 --- !u!114 &420697011 stripped
@@ -6054,6 +6158,7 @@ MonoBehaviour:
   bigAttackRange: 20
   attackSpeed: 1
   maxHealth: 0
+  currentHp: 0
   hpRegen: 0
   crit: 0
   critChance: 0
@@ -6062,8 +6167,8 @@ MonoBehaviour:
   axeSpeed: 0
   pickaxeDamage: 0
   pickaxeSpeed: 0
-  wood: 0
   isMinening: 0
+  isFight: 0
   itemFirstStat: 0
   itemSecondStat: 0
 --- !u!114 &457485203 stripped
@@ -6426,7 +6531,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 153d495ae72475b4090d61622adab9ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  damage: 250
   armor: 0
   lifesteal: 0
   speed: 3
@@ -6434,6 +6539,7 @@ MonoBehaviour:
   bigAttackRange: 20
   attackSpeed: 1
   maxHealth: 0
+  currentHp: 0
   hpRegen: 0
   crit: 0
   critChance: 0
@@ -6442,8 +6548,8 @@ MonoBehaviour:
   axeSpeed: 0
   pickaxeDamage: 0
   pickaxeSpeed: 0
-  wood: 0
   isMinening: 0
+  isFight: 0
   itemFirstStat: 0
   itemSecondStat: 0
 --- !u!114 &486012106 stripped
@@ -6872,6 +6978,10 @@ PrefabInstance:
       propertyPath: expForKill
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 5646036886447792721, guid: f86baffa965e59b4290d73b7f2f4a53a, type: 3}
+      propertyPath: moneyForKill
+      value: 650
+      objectReference: {fileID: 0}
     - target: {fileID: 6908479084238250295, guid: f86baffa965e59b4290d73b7f2f4a53a, type: 3}
       propertyPath: maxHealth
       value: 500
@@ -6982,6 +7092,7 @@ MonoBehaviour:
   bigAttackRange: 20
   attackSpeed: 1
   maxHealth: 0
+  currentHp: 0
   hpRegen: 0
   crit: 0
   critChance: 0
@@ -6990,8 +7101,8 @@ MonoBehaviour:
   axeSpeed: 0
   pickaxeDamage: 0
   pickaxeSpeed: 0
-  wood: 0
   isMinening: 0
+  isFight: 0
   itemFirstStat: 0
   itemSecondStat: 0
 --- !u!114 &534449942 stripped
@@ -7035,6 +7146,7 @@ MonoBehaviour:
   bigAttackRange: 20
   attackSpeed: 1
   maxHealth: 0
+  currentHp: 0
   hpRegen: 0
   crit: 0
   critChance: 0
@@ -7043,8 +7155,8 @@ MonoBehaviour:
   axeSpeed: 0
   pickaxeDamage: 0
   pickaxeSpeed: 0
-  wood: 0
   isMinening: 0
+  isFight: 0
   itemFirstStat: 0
   itemSecondStat: 0
 --- !u!114 &538134343 stripped
@@ -7436,8 +7548,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000022441, y: 690.208}
-  m_SizeDelta: {x: 1293.7, y: 377.864}
+  m_AnchoredPosition: {x: -0.0032015, y: 690.208}
+  m_SizeDelta: {x: 1817.3, y: 377.864}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &571417383
 MonoBehaviour:
@@ -7461,15 +7573,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: ItemName
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4283170819
+  m_fontColor: {r: 0.011764707, g: 0, b: 0.29803923, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -7486,8 +7598,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 225
-  m_fontSizeBase: 225
+  m_fontSize: 258.14
+  m_fontSizeBase: 258.14
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -7741,6 +7853,7 @@ GameObject:
   m_Component:
   - component: {fileID: 577826139}
   - component: {fileID: 577826138}
+  - component: {fileID: 577826140}
   m_Layer: 0
   m_Name: SaveManager
   m_TagString: Untagged
@@ -7775,6 +7888,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &577826140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 577826137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1ed4ddae7177df45a539c799c1d1bac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timePerSave: 3
 --- !u!4 &580905075 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8783306491909106419, guid: f02116c209ecd9e488fc4d2cd8996133, type: 3}
@@ -7805,7 +7931,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 583319464}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -7814,7 +7940,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -122.07, y: 1.5736}
+  m_AnchoredPosition: {x: -122.069885, y: -0.026611328}
   m_SizeDelta: {x: 380.51, y: 140.91}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &583319466
@@ -7846,8 +7972,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294946950
-  m_fontColor: {r: 0.5264151, g: 0.6899488, b: 1, a: 1}
+    rgba: 4294953597
+  m_fontColor: {r: 0.48867923, g: 0.79375297, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -7944,6 +8070,7 @@ MonoBehaviour:
   bigAttackRange: 20
   attackSpeed: 1
   maxHealth: 0
+  currentHp: 0
   hpRegen: 0
   crit: 0
   critChance: 0
@@ -7952,8 +8079,8 @@ MonoBehaviour:
   axeSpeed: 0
   pickaxeDamage: 0
   pickaxeSpeed: 0
-  wood: 0
   isMinening: 0
+  isFight: 0
   itemFirstStat: 0
   itemSecondStat: 0
 --- !u!114 &587007463 stripped
@@ -8739,6 +8866,7 @@ MonoBehaviour:
   bigAttackRange: 20
   attackSpeed: 1
   maxHealth: 0
+  currentHp: 0
   hpRegen: 0
   crit: 0
   critChance: 0
@@ -8747,8 +8875,8 @@ MonoBehaviour:
   axeSpeed: 0
   pickaxeDamage: 0
   pickaxeSpeed: 0
-  wood: 0
   isMinening: 0
+  isFight: 0
   itemFirstStat: 0
   itemSecondStat: 0
 --- !u!114 &625459089 stripped
@@ -9027,6 +9155,7 @@ MonoBehaviour:
   bigAttackRange: 20
   attackSpeed: 1
   maxHealth: 0
+  currentHp: 0
   hpRegen: 0
   crit: 0
   critChance: 0
@@ -9035,8 +9164,8 @@ MonoBehaviour:
   axeSpeed: 0
   pickaxeDamage: 0
   pickaxeSpeed: 0
-  wood: 0
   isMinening: 0
+  isFight: 0
   itemFirstStat: 0
   itemSecondStat: 0
 --- !u!114 &649685108 stripped
@@ -9713,7 +9842,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &692264885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10217,6 +10346,10 @@ PrefabInstance:
       propertyPath: expForKill
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 5646036886447792721, guid: f86baffa965e59b4290d73b7f2f4a53a, type: 3}
+      propertyPath: moneyForKill
+      value: 750
+      objectReference: {fileID: 0}
     - target: {fileID: 6908479084238250295, guid: f86baffa965e59b4290d73b7f2f4a53a, type: 3}
       propertyPath: maxHealth
       value: 500
@@ -10495,7 +10628,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &743846331
 Transform:
   m_ObjectHideFlags: 0
@@ -10973,6 +11106,7 @@ MonoBehaviour:
   bigAttackRange: 20
   attackSpeed: 1
   maxHealth: 0
+  currentHp: 0
   hpRegen: 0
   crit: 0
   critChance: 0
@@ -10981,8 +11115,8 @@ MonoBehaviour:
   axeSpeed: 0
   pickaxeDamage: 0
   pickaxeSpeed: 0
-  wood: 0
   isMinening: 0
+  isFight: 0
   itemFirstStat: 0
   itemSecondStat: 0
 --- !u!114 &781429704 stripped
@@ -11364,6 +11498,10 @@ PrefabInstance:
       propertyPath: expForKill
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 5646036886447792721, guid: f86baffa965e59b4290d73b7f2f4a53a, type: 3}
+      propertyPath: moneyForKill
+      value: 250
+      objectReference: {fileID: 0}
     - target: {fileID: 6908479084238250295, guid: f86baffa965e59b4290d73b7f2f4a53a, type: 3}
       propertyPath: maxHealth
       value: 50
@@ -11466,7 +11604,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 153d495ae72475b4090d61622adab9ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  damage: 250
   armor: 0
   lifesteal: 0
   speed: 3
@@ -11474,6 +11612,7 @@ MonoBehaviour:
   bigAttackRange: 20
   attackSpeed: 1
   maxHealth: 0
+  currentHp: 0
   hpRegen: 0
   crit: 0
   critChance: 0
@@ -11482,8 +11621,8 @@ MonoBehaviour:
   axeSpeed: 0
   pickaxeDamage: 0
   pickaxeSpeed: 0
-  wood: 0
   isMinening: 0
+  isFight: 0
   itemFirstStat: 0
   itemSecondStat: 0
 --- !u!114 &792596101 stripped
@@ -11913,6 +12052,10 @@ PrefabInstance:
       propertyPath: expForKill
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 5646036886447792721, guid: f86baffa965e59b4290d73b7f2f4a53a, type: 3}
+      propertyPath: moneyForKill
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 6908479084238250295, guid: f86baffa965e59b4290d73b7f2f4a53a, type: 3}
       propertyPath: maxHealth
       value: 250
@@ -12012,6 +12155,7 @@ MonoBehaviour:
   bigAttackRange: 20
   attackSpeed: 1
   maxHealth: 0
+  currentHp: 0
   hpRegen: 0
   crit: 0
   critChance: 0
@@ -12020,8 +12164,8 @@ MonoBehaviour:
   axeSpeed: 0
   pickaxeDamage: 0
   pickaxeSpeed: 0
-  wood: 0
   isMinening: 0
+  isFight: 0
   itemFirstStat: 0
   itemSecondStat: 0
 --- !u!114 &825611631 stripped
@@ -12259,7 +12403,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &846307759
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12295,7 +12439,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5169811, g: 0.5169811, b: 0.5169811, a: 0.87058824}
+  m_Color: {r: 0.122272365, g: 0.01787822, b: 0.3509434, a: 0.87058824}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -12439,7 +12583,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.011764707, g: 0, b: 0.29803923, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -12447,21 +12591,19 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 160
+    m_Font: {fileID: 12800000, guid: 5dd49b3eacc540408c98eee0de38e0f1, type: 3}
+    m_FontSize: 170
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
-    m_MaxSize: 160
+    m_MaxSize: 210
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Close
-
-'
+  m_Text: Drop Item
 --- !u!222 &851213827
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12533,6 +12675,10 @@ PrefabInstance:
     - target: {fileID: 5646036886447792721, guid: f86baffa965e59b4290d73b7f2f4a53a, type: 3}
       propertyPath: expForKill
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5646036886447792721, guid: f86baffa965e59b4290d73b7f2f4a53a, type: 3}
+      propertyPath: moneyForKill
+      value: 55
       objectReference: {fileID: 0}
     - target: {fileID: 6908479084238250295, guid: f86baffa965e59b4290d73b7f2f4a53a, type: 3}
       propertyPath: maxHealth
@@ -12644,6 +12790,7 @@ MonoBehaviour:
   bigAttackRange: 20
   attackSpeed: 1
   maxHealth: 0
+  currentHp: 0
   hpRegen: 0
   crit: 0
   critChance: 0
@@ -12652,8 +12799,8 @@ MonoBehaviour:
   axeSpeed: 0
   pickaxeDamage: 0
   pickaxeSpeed: 0
-  wood: 0
   isMinening: 0
+  isFight: 0
   itemFirstStat: 0
   itemSecondStat: 0
 --- !u!114 &851263094 stripped
@@ -13268,6 +13415,10 @@ PrefabInstance:
       propertyPath: expForKill
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 5646036886447792721, guid: f86baffa965e59b4290d73b7f2f4a53a, type: 3}
+      propertyPath: moneyForKill
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6908479084238250295, guid: f86baffa965e59b4290d73b7f2f4a53a, type: 3}
       propertyPath: maxHealth
       value: 80
@@ -13378,6 +13529,7 @@ MonoBehaviour:
   bigAttackRange: 20
   attackSpeed: 1
   maxHealth: 0
+  currentHp: 0
   hpRegen: 0
   crit: 0
   critChance: 0
@@ -13386,8 +13538,8 @@ MonoBehaviour:
   axeSpeed: 0
   pickaxeDamage: 0
   pickaxeSpeed: 0
-  wood: 0
   isMinening: 0
+  isFight: 0
   itemFirstStat: 0
   itemSecondStat: 0
 --- !u!114 &888073861 stripped
@@ -13431,6 +13583,7 @@ MonoBehaviour:
   bigAttackRange: 20
   attackSpeed: 1
   maxHealth: 0
+  currentHp: 0
   hpRegen: 0
   crit: 0
   critChance: 0
@@ -13439,8 +13592,8 @@ MonoBehaviour:
   axeSpeed: 0
   pickaxeDamage: 0
   pickaxeSpeed: 0
-  wood: 0
   isMinening: 0
+  isFight: 0
   itemFirstStat: 0
   itemSecondStat: 0
 --- !u!114 &888107866 stripped
@@ -13668,6 +13821,7 @@ MonoBehaviour:
   bigAttackRange: 20
   attackSpeed: 1
   maxHealth: 0
+  currentHp: 0
   hpRegen: 0
   crit: 0
   critChance: 0
@@ -13676,8 +13830,8 @@ MonoBehaviour:
   axeSpeed: 0
   pickaxeDamage: 0
   pickaxeSpeed: 0
-  wood: 0
   isMinening: 0
+  isFight: 0
   itemFirstStat: 0
   itemSecondStat: 0
 --- !u!114 &936172515 stripped
@@ -13882,8 +14036,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4289331207
+  m_fontColor: {r: 0.027450982, g: 0, b: 0.6666667, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -14005,6 +14159,10 @@ PrefabInstance:
     - target: {fileID: 5646036886447792721, guid: f86baffa965e59b4290d73b7f2f4a53a, type: 3}
       propertyPath: expForKill
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5646036886447792721, guid: f86baffa965e59b4290d73b7f2f4a53a, type: 3}
+      propertyPath: moneyForKill
+      value: 350
       objectReference: {fileID: 0}
     - target: {fileID: 6908479084238250295, guid: f86baffa965e59b4290d73b7f2f4a53a, type: 3}
       propertyPath: maxHealth
@@ -15112,7 +15270,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1009672974}
   - component: {fileID: 1009672973}
-  - component: {fileID: 1009672975}
   m_Layer: 0
   m_Name: ObjectsManager
   m_TagString: Untagged
@@ -15150,18 +15307,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1009672975
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1009672972}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1ed4ddae7177df45a539c799c1d1bac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1015434619
 GameObject:
   m_ObjectHideFlags: 0
@@ -15293,6 +15438,7 @@ MonoBehaviour:
   bigAttackRange: 20
   attackSpeed: 1
   maxHealth: 0
+  currentHp: 0
   hpRegen: 0
   crit: 0
   critChance: 0
@@ -15301,8 +15447,8 @@ MonoBehaviour:
   axeSpeed: 0
   pickaxeDamage: 0
   pickaxeSpeed: 0
-  wood: 0
   isMinening: 0
+  isFight: 0
   itemFirstStat: 0
   itemSecondStat: 0
 --- !u!114 &1017629513 stripped
@@ -16161,10 +16307,10 @@ RectTransform:
   - {fileID: 1080345679}
   - {fileID: 1819254418}
   - {fileID: 846307759}
-  - {fileID: 1871797915}
   - {fileID: 1747034414}
   - {fileID: 1428740281}
   - {fileID: 306972086}
+  - {fileID: 1871797915}
   m_Father: {fileID: 938468907}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -16768,6 +16914,10 @@ PrefabInstance:
       propertyPath: expForKill
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 5646036886447792721, guid: f86baffa965e59b4290d73b7f2f4a53a, type: 3}
+      propertyPath: moneyForKill
+      value: 250
+      objectReference: {fileID: 0}
     - target: {fileID: 6908479084238250295, guid: f86baffa965e59b4290d73b7f2f4a53a, type: 3}
       propertyPath: maxHealth
       value: 50
@@ -16870,7 +17020,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 153d495ae72475b4090d61622adab9ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  damage: 250
   armor: 0
   lifesteal: 0
   speed: 3
@@ -16878,6 +17028,7 @@ MonoBehaviour:
   bigAttackRange: 20
   attackSpeed: 1
   maxHealth: 0
+  currentHp: 0
   hpRegen: 0
   crit: 0
   critChance: 0
@@ -16886,8 +17037,8 @@ MonoBehaviour:
   axeSpeed: 0
   pickaxeDamage: 0
   pickaxeSpeed: 0
-  wood: 0
   isMinening: 0
+  isFight: 0
   itemFirstStat: 0
   itemSecondStat: 0
 --- !u!114 &1187492568 stripped
@@ -16964,6 +17115,10 @@ PrefabInstance:
     - target: {fileID: 5646036886447792721, guid: f86baffa965e59b4290d73b7f2f4a53a, type: 3}
       propertyPath: expForKill
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5646036886447792721, guid: f86baffa965e59b4290d73b7f2f4a53a, type: 3}
+      propertyPath: moneyForKill
+      value: 350
       objectReference: {fileID: 0}
     - target: {fileID: 6908479084238250295, guid: f86baffa965e59b4290d73b7f2f4a53a, type: 3}
       propertyPath: maxHealth
@@ -17480,6 +17635,7 @@ MonoBehaviour:
   bigAttackRange: 20
   attackSpeed: 1
   maxHealth: 0
+  currentHp: 0
   hpRegen: 0
   crit: 0
   critChance: 0
@@ -17488,8 +17644,8 @@ MonoBehaviour:
   axeSpeed: 0
   pickaxeDamage: 0
   pickaxeSpeed: 0
-  wood: 0
   isMinening: 0
+  isFight: 0
   itemFirstStat: 0
   itemSecondStat: 0
 --- !u!114 &1210590117 stripped
@@ -17577,6 +17733,10 @@ PrefabInstance:
     - target: {fileID: 5646036886447792721, guid: f86baffa965e59b4290d73b7f2f4a53a, type: 3}
       propertyPath: expForKill
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5646036886447792721, guid: f86baffa965e59b4290d73b7f2f4a53a, type: 3}
+      propertyPath: moneyForKill
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6908479084238250295, guid: f86baffa965e59b4290d73b7f2f4a53a, type: 3}
       propertyPath: maxHealth
@@ -17906,6 +18066,7 @@ MonoBehaviour:
   bigAttackRange: 20
   attackSpeed: 1
   maxHealth: 0
+  currentHp: 0
   hpRegen: 0
   crit: 0
   critChance: 0
@@ -17914,8 +18075,8 @@ MonoBehaviour:
   axeSpeed: 0
   pickaxeDamage: 0
   pickaxeSpeed: 0
-  wood: 0
   isMinening: 0
+  isFight: 0
   itemFirstStat: 0
   itemSecondStat: 0
 --- !u!114 &1235985143 stripped
@@ -18039,6 +18200,7 @@ MonoBehaviour:
   bigAttackRange: 20
   attackSpeed: 1
   maxHealth: 0
+  currentHp: 0
   hpRegen: 0
   crit: 0
   critChance: 0
@@ -18047,8 +18209,8 @@ MonoBehaviour:
   axeSpeed: 0
   pickaxeDamage: 0
   pickaxeSpeed: 0
-  wood: 0
   isMinening: 0
+  isFight: 0
   itemFirstStat: 0
   itemSecondStat: 0
 --- !u!114 &1244820092 stripped
@@ -18812,6 +18974,10 @@ PrefabInstance:
       propertyPath: expForKill
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 5646036886447792721, guid: f86baffa965e59b4290d73b7f2f4a53a, type: 3}
+      propertyPath: moneyForKill
+      value: 350
+      objectReference: {fileID: 0}
     - target: {fileID: 6908479084238250295, guid: f86baffa965e59b4290d73b7f2f4a53a, type: 3}
       propertyPath: maxHealth
       value: 50
@@ -19310,6 +19476,10 @@ PrefabInstance:
       propertyPath: expForKill
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 5646036886447792721, guid: f86baffa965e59b4290d73b7f2f4a53a, type: 3}
+      propertyPath: moneyForKill
+      value: 650
+      objectReference: {fileID: 0}
     - target: {fileID: 6908479084238250295, guid: f86baffa965e59b4290d73b7f2f4a53a, type: 3}
       propertyPath: maxHealth
       value: 350
@@ -19420,6 +19590,7 @@ MonoBehaviour:
   bigAttackRange: 20
   attackSpeed: 1
   maxHealth: 0
+  currentHp: 0
   hpRegen: 0
   crit: 0
   critChance: 0
@@ -19428,8 +19599,8 @@ MonoBehaviour:
   axeSpeed: 0
   pickaxeDamage: 0
   pickaxeSpeed: 0
-  wood: 0
   isMinening: 0
+  isFight: 0
   itemFirstStat: 0
   itemSecondStat: 0
 --- !u!114 &1402079391 stripped
@@ -19785,7 +19956,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.7372549}
+  m_Color: {r: 0, g: 0.7281513, b: 1, a: 0.33333334}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -19878,6 +20049,10 @@ PrefabInstance:
     - target: {fileID: 5646036886447792721, guid: f86baffa965e59b4290d73b7f2f4a53a, type: 3}
       propertyPath: expForKill
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5646036886447792721, guid: f86baffa965e59b4290d73b7f2f4a53a, type: 3}
+      propertyPath: moneyForKill
+      value: 350
       objectReference: {fileID: 0}
     - target: {fileID: 6908479084238250295, guid: f86baffa965e59b4290d73b7f2f4a53a, type: 3}
       propertyPath: maxHealth
@@ -20309,8 +20484,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4292411440
+  m_fontColor: {r: 0.18652506, g: 0, b: 0.8490566, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -20377,81 +20552,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1454729308}
   m_CullTransparentMesh: 1
---- !u!1 &1456639939
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1456639940}
-  - component: {fileID: 1456639942}
-  - component: {fileID: 1456639941}
-  m_Layer: 0
-  m_Name: ExpBar
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1456639940
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1456639939}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 306972086}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00076270953, y: 1.573}
-  m_SizeDelta: {x: 624.64, y: 140.907}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1456639941
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1456639939}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.90943396, g: 0.6628702, b: 0.29342112, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1a4a5ab8d9b8cb64d857cdc331b45e0d, type: 3}
-  m_Type: 3
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1456639942
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1456639939}
-  m_CullTransparentMesh: 1
 --- !u!1 &1458117046 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2269321065437285558, guid: f86baffa965e59b4290d73b7f2f4a53a, type: 3}
@@ -20482,6 +20582,7 @@ MonoBehaviour:
   bigAttackRange: 20
   attackSpeed: 1
   maxHealth: 0
+  currentHp: 0
   hpRegen: 0
   crit: 0
   critChance: 0
@@ -20490,8 +20591,8 @@ MonoBehaviour:
   axeSpeed: 0
   pickaxeDamage: 0
   pickaxeSpeed: 0
-  wood: 0
   isMinening: 0
+  isFight: 0
   itemFirstStat: 0
   itemSecondStat: 0
 --- !u!114 &1458117058 stripped
@@ -20682,7 +20783,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.94716984, g: 0.8417301, b: 0.8417301, a: 1}
+  m_Color: {r: 0.7398398, g: 0.6396227, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -20770,6 +20871,10 @@ PrefabInstance:
     - target: {fileID: 5646036886447792721, guid: f86baffa965e59b4290d73b7f2f4a53a, type: 3}
       propertyPath: expForKill
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5646036886447792721, guid: f86baffa965e59b4290d73b7f2f4a53a, type: 3}
+      propertyPath: moneyForKill
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 6908479084238250295, guid: f86baffa965e59b4290d73b7f2f4a53a, type: 3}
       propertyPath: maxHealth
@@ -20903,6 +21008,10 @@ PrefabInstance:
     - target: {fileID: 5646036886447792721, guid: f86baffa965e59b4290d73b7f2f4a53a, type: 3}
       propertyPath: expForKill
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5646036886447792721, guid: f86baffa965e59b4290d73b7f2f4a53a, type: 3}
+      propertyPath: moneyForKill
+      value: 750
       objectReference: {fileID: 0}
     - target: {fileID: 6908479084238250295, guid: f86baffa965e59b4290d73b7f2f4a53a, type: 3}
       propertyPath: maxHealth
@@ -21108,8 +21217,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4292411440
+  m_fontColor: {r: 0.18652506, g: 0, b: 0.8490566, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -21589,6 +21698,10 @@ PrefabInstance:
       propertyPath: expForKill
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 5646036886447792721, guid: f86baffa965e59b4290d73b7f2f4a53a, type: 3}
+      propertyPath: moneyForKill
+      value: 55
+      objectReference: {fileID: 0}
     - target: {fileID: 6908479084238250295, guid: f86baffa965e59b4290d73b7f2f4a53a, type: 3}
       propertyPath: maxHealth
       value: 60
@@ -21707,6 +21820,7 @@ MonoBehaviour:
   bigAttackRange: 20
   attackSpeed: 1
   maxHealth: 0
+  currentHp: 0
   hpRegen: 0
   crit: 0
   critChance: 0
@@ -21715,8 +21829,8 @@ MonoBehaviour:
   axeSpeed: 0
   pickaxeDamage: 0
   pickaxeSpeed: 0
-  wood: 0
   isMinening: 0
+  isFight: 0
   itemFirstStat: 0
   itemSecondStat: 0
 --- !u!114 &1548347295 stripped
@@ -21793,6 +21907,10 @@ PrefabInstance:
     - target: {fileID: 5646036886447792721, guid: f86baffa965e59b4290d73b7f2f4a53a, type: 3}
       propertyPath: expForKill
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5646036886447792721, guid: f86baffa965e59b4290d73b7f2f4a53a, type: 3}
+      propertyPath: moneyForKill
+      value: 650
       objectReference: {fileID: 0}
     - target: {fileID: 6908479084238250295, guid: f86baffa965e59b4290d73b7f2f4a53a, type: 3}
       propertyPath: maxHealth
@@ -21904,6 +22022,7 @@ MonoBehaviour:
   bigAttackRange: 20
   attackSpeed: 1
   maxHealth: 0
+  currentHp: 0
   hpRegen: 0
   crit: 0
   critChance: 0
@@ -21912,8 +22031,8 @@ MonoBehaviour:
   axeSpeed: 0
   pickaxeDamage: 0
   pickaxeSpeed: 0
-  wood: 0
   isMinening: 0
+  isFight: 0
   itemFirstStat: 0
   itemSecondStat: 0
 --- !u!114 &1552275424 stripped
@@ -21927,6 +22046,139 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31c6624e2fb8b914cb1040a83ddefd5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1552999496
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1552999497}
+  - component: {fileID: 1552999500}
+  - component: {fileID: 1552999499}
+  - component: {fileID: 1552999498}
+  m_Layer: 0
+  m_Name: Close (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1552999497
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1552999496}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -19.500002}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 132058498}
+  m_Father: {fileID: 1747034414}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.87187165, y: 0.9376587}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -22.333, y: -66.694}
+  m_SizeDelta: {x: 44.666138, y: 133.3883}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1552999498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1552999496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1552999499}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1747034413}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1552999499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1552999496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1552999500
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1552999496}
+  m_CullTransparentMesh: 1
 --- !u!1 &1554438394
 GameObject:
   m_ObjectHideFlags: 0
@@ -22663,7 +22915,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.94716984, g: 0.8417301, b: 0.8417301, a: 1}
+  m_Color: {r: 0.7411765, g: 0.6392157, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -23203,6 +23455,10 @@ PrefabInstance:
       propertyPath: expForKill
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 5646036886447792721, guid: f86baffa965e59b4290d73b7f2f4a53a, type: 3}
+      propertyPath: moneyForKill
+      value: 150
+      objectReference: {fileID: 0}
     - target: {fileID: 6908479084238250295, guid: f86baffa965e59b4290d73b7f2f4a53a, type: 3}
       propertyPath: maxHealth
       value: 100
@@ -23302,6 +23558,7 @@ MonoBehaviour:
   bigAttackRange: 20
   attackSpeed: 1
   maxHealth: 0
+  currentHp: 0
   hpRegen: 0
   crit: 0
   critChance: 0
@@ -23310,8 +23567,8 @@ MonoBehaviour:
   axeSpeed: 0
   pickaxeDamage: 0
   pickaxeSpeed: 0
-  wood: 0
   isMinening: 0
+  isFight: 0
   itemFirstStat: 0
   itemSecondStat: 0
 --- !u!114 &1631862988 stripped
@@ -23436,6 +23693,10 @@ PrefabInstance:
     - target: {fileID: 5646036886447792721, guid: f86baffa965e59b4290d73b7f2f4a53a, type: 3}
       propertyPath: expForKill
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5646036886447792721, guid: f86baffa965e59b4290d73b7f2f4a53a, type: 3}
+      propertyPath: moneyForKill
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 6908479084238250295, guid: f86baffa965e59b4290d73b7f2f4a53a, type: 3}
       propertyPath: maxHealth
@@ -23607,6 +23868,7 @@ MonoBehaviour:
   bigAttackRange: 20
   attackSpeed: 1
   maxHealth: 0
+  currentHp: 0
   hpRegen: 0
   crit: 0
   critChance: 0
@@ -23615,8 +23877,8 @@ MonoBehaviour:
   axeSpeed: 0
   pickaxeDamage: 0
   pickaxeSpeed: 0
-  wood: 0
   isMinening: 0
+  isFight: 0
   itemFirstStat: 0
   itemSecondStat: 0
 --- !u!114 &1655249153 stripped
@@ -23745,6 +24007,7 @@ MonoBehaviour:
   bigAttackRange: 20
   attackSpeed: 1
   maxHealth: 0
+  currentHp: 0
   hpRegen: 0
   crit: 0
   critChance: 0
@@ -23753,8 +24016,8 @@ MonoBehaviour:
   axeSpeed: 0
   pickaxeDamage: 0
   pickaxeSpeed: 0
-  wood: 0
   isMinening: 0
+  isFight: 0
   itemFirstStat: 0
   itemSecondStat: 0
 --- !u!114 &1662879503 stripped
@@ -24100,7 +24363,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.011764707, g: 0, b: 0.29803923, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -24108,12 +24371,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 160
+    m_Font: {fileID: 12800000, guid: 5dd49b3eacc540408c98eee0de38e0f1, type: 3}
+    m_FontSize: 210
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 160
+    m_MinSize: 2
+    m_MaxSize: 210
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -24888,7 +25151,7 @@ GameObject:
   - component: {fileID: 1739958846}
   - component: {fileID: 1739958845}
   m_Layer: 0
-  m_Name: CloseButton
+  m_Name: DropItemButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24958,6 +25221,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1747034417}
+        m_TargetAssemblyTypeName: EquipMenu, Assembly-CSharp
+        m_MethodName: DeleteItem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1747034413}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -24983,7 +25258,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.57793516, g: 0.59847957, b: 0.98490566, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -25026,7 +25301,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1747034414
 RectTransform:
   m_ObjectHideFlags: 0
@@ -25048,6 +25323,7 @@ RectTransform:
   - {fileID: 1739958844}
   - {fileID: 312958692}
   - {fileID: 791730010}
+  - {fileID: 1552999497}
   m_Father: {fileID: 1128607989}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
@@ -25068,7 +25344,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.89411765}
+  m_Color: {r: 0.34430036, g: 0.65549386, b: 0.9169811, a: 0.7058824}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -25386,6 +25662,10 @@ PrefabInstance:
       propertyPath: expForKill
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 5646036886447792721, guid: f86baffa965e59b4290d73b7f2f4a53a, type: 3}
+      propertyPath: moneyForKill
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6908479084238250295, guid: f86baffa965e59b4290d73b7f2f4a53a, type: 3}
       propertyPath: maxHealth
       value: 500
@@ -25551,6 +25831,7 @@ MonoBehaviour:
   bigAttackRange: 20
   attackSpeed: 1
   maxHealth: 0
+  currentHp: 0
   hpRegen: 0
   crit: 0
   critChance: 0
@@ -25559,8 +25840,8 @@ MonoBehaviour:
   axeSpeed: 0
   pickaxeDamage: 0
   pickaxeSpeed: 0
-  wood: 0
   isMinening: 0
+  isFight: 0
   itemFirstStat: 0
   itemSecondStat: 0
 --- !u!114 &1765743545 stripped
@@ -25626,6 +25907,7 @@ MonoBehaviour:
   bigAttackRange: 20
   attackSpeed: 1
   maxHealth: 0
+  currentHp: 0
   hpRegen: 0
   crit: 0
   critChance: 0
@@ -25634,8 +25916,8 @@ MonoBehaviour:
   axeSpeed: 0
   pickaxeDamage: 0
   pickaxeSpeed: 0
-  wood: 0
   isMinening: 0
+  isFight: 0
   itemFirstStat: 0
   itemSecondStat: 0
 --- !u!114 &1771907296 stripped
@@ -25782,7 +26064,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8220732573412760894, guid: b25491eeac5d52c43931f0743110ab58, type: 3}
       propertyPath: maxHealth
-      value: 1000000
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 8388929337141899223, guid: b25491eeac5d52c43931f0743110ab58, type: 3}
       propertyPath: m_Name
@@ -26124,6 +26406,7 @@ MonoBehaviour:
   bigAttackRange: 20
   attackSpeed: 1
   maxHealth: 0
+  currentHp: 0
   hpRegen: 0
   crit: 0
   critChance: 0
@@ -26132,8 +26415,8 @@ MonoBehaviour:
   axeSpeed: 0
   pickaxeDamage: 0
   pickaxeSpeed: 0
-  wood: 0
   isMinening: 0
+  isFight: 0
   itemFirstStat: 0
   itemSecondStat: 0
 --- !u!114 &1818469752 stripped
@@ -26487,8 +26770,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4292411440
+  m_fontColor: {r: 0.18652506, g: 0, b: 0.8490566, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -26727,6 +27010,7 @@ MonoBehaviour:
   bigAttackRange: 0
   attackSpeed: 0
   maxHealth: 0
+  currentHp: 0
   hpRegen: 0
   crit: 0
   critChance: 0
@@ -26735,8 +27019,8 @@ MonoBehaviour:
   axeSpeed: 0
   pickaxeDamage: 0
   pickaxeSpeed: 0
-  wood: 0
   isMinening: 0
+  isFight: 0
   itemFirstStat: 0
   itemSecondStat: 0
 --- !u!114 &1839574615
@@ -26752,6 +27036,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentStats: {fileID: 0}
+  statsAddedPerLvl: {fileID: 1873071322}
 --- !u!4 &1839574616
 Transform:
   m_ObjectHideFlags: 0
@@ -26764,7 +27049,8 @@ Transform:
   m_LocalPosition: {x: -1.6103983, y: 0.47261953, z: 25.621143}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1873071321}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1840576733 stripped
@@ -26966,6 +27252,7 @@ MonoBehaviour:
   bigAttackRange: 20
   attackSpeed: 1
   maxHealth: 0
+  currentHp: 0
   hpRegen: 0
   crit: 0
   critChance: 0
@@ -26974,8 +27261,8 @@ MonoBehaviour:
   axeSpeed: 0
   pickaxeDamage: 0
   pickaxeSpeed: 0
-  wood: 0
   isMinening: 0
+  isFight: 0
   itemFirstStat: 0
   itemSecondStat: 0
 --- !u!114 &1841561319 stripped
@@ -27266,6 +27553,7 @@ MonoBehaviour:
   bigAttackRange: 20
   attackSpeed: 1
   maxHealth: 0
+  currentHp: 0
   hpRegen: 0
   crit: 0
   critChance: 0
@@ -27274,8 +27562,8 @@ MonoBehaviour:
   axeSpeed: 0
   pickaxeDamage: 0
   pickaxeSpeed: 0
-  wood: 0
   isMinening: 0
+  isFight: 0
   itemFirstStat: 0
   itemSecondStat: 0
 --- !u!114 &1858694255 stripped
@@ -27363,6 +27651,10 @@ PrefabInstance:
     - target: {fileID: 5646036886447792721, guid: f86baffa965e59b4290d73b7f2f4a53a, type: 3}
       propertyPath: expForKill
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5646036886447792721, guid: f86baffa965e59b4290d73b7f2f4a53a, type: 3}
+      propertyPath: moneyForKill
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 6908479084238250295, guid: f86baffa965e59b4290d73b7f2f4a53a, type: 3}
       propertyPath: maxHealth
@@ -27496,6 +27788,10 @@ PrefabInstance:
     - target: {fileID: 5646036886447792721, guid: f86baffa965e59b4290d73b7f2f4a53a, type: 3}
       propertyPath: expForKill
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5646036886447792721, guid: f86baffa965e59b4290d73b7f2f4a53a, type: 3}
+      propertyPath: moneyForKill
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 6908479084238250295, guid: f86baffa965e59b4290d73b7f2f4a53a, type: 3}
       propertyPath: maxHealth
@@ -27858,6 +28154,71 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1871797914}
   m_CullTransparentMesh: 1
+--- !u!1 &1873071320
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1873071321}
+  - component: {fileID: 1873071322}
+  m_Layer: 0
+  m_Name: StatAddedPerLevel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1873071321
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1873071320}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1839574616}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1873071322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1873071320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 153d495ae72475b4090d61622adab9ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 25
+  armor: 0.05
+  lifesteal: 0
+  speed: 0.05
+  attackRange: 0.1
+  bigAttackRange: 0
+  attackSpeed: -0.01
+  maxHealth: 10
+  currentHp: 0
+  hpRegen: 0.5
+  crit: 0
+  critChance: 0
+  bonusExp: 0
+  axeDamage: 0
+  axeSpeed: 0
+  pickaxeDamage: 0
+  pickaxeSpeed: 0
+  isMinening: 0
+  isFight: 0
+  itemFirstStat: 0
+  itemSecondStat: 0
 --- !u!1 &1883219879
 GameObject:
   m_ObjectHideFlags: 0
@@ -28069,8 +28430,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294949809
-  m_fontColor: {r: 0.6924528, g: 0.7328715, b: 1, a: 1}
+    rgba: 4294778880
+  m_fontColor: {r: 0, g: 0.1272377, b: 0.9924528, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -28087,8 +28448,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 110
-  m_fontSizeBase: 110
+  m_fontSize: 170
+  m_fontSizeBase: 170
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -28661,6 +29022,7 @@ MonoBehaviour:
   bigAttackRange: 20
   attackSpeed: 1
   maxHealth: 0
+  currentHp: 0
   hpRegen: 0
   crit: 0
   critChance: 0
@@ -28669,8 +29031,8 @@ MonoBehaviour:
   axeSpeed: 0
   pickaxeDamage: 0
   pickaxeSpeed: 0
-  wood: 0
   isMinening: 0
+  isFight: 0
   itemFirstStat: 0
   itemSecondStat: 0
 --- !u!114 &1930450874 stripped
@@ -28815,7 +29177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.57793516, g: 0.59847957, b: 0.98490566, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -29375,8 +29737,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4289331207
+  m_fontColor: {r: 0.02869383, g: 0, b: 0.6679245, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -29545,6 +29907,7 @@ MonoBehaviour:
   bigAttackRange: 20
   attackSpeed: 1
   maxHealth: 0
+  currentHp: 0
   hpRegen: 0
   crit: 0
   critChance: 0
@@ -29553,8 +29916,8 @@ MonoBehaviour:
   axeSpeed: 0
   pickaxeDamage: 0
   pickaxeSpeed: 0
-  wood: 0
   isMinening: 0
+  isFight: 0
   itemFirstStat: 0
   itemSecondStat: 0
 --- !u!4 &1984133566 stripped
@@ -29748,7 +30111,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1990132956
 Transform:
   m_ObjectHideFlags: 0
@@ -29918,6 +30281,10 @@ PrefabInstance:
     - target: {fileID: 5646036886447792721, guid: f86baffa965e59b4290d73b7f2f4a53a, type: 3}
       propertyPath: expForKill
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5646036886447792721, guid: f86baffa965e59b4290d73b7f2f4a53a, type: 3}
+      propertyPath: moneyForKill
+      value: 750
       objectReference: {fileID: 0}
     - target: {fileID: 6908479084238250295, guid: f86baffa965e59b4290d73b7f2f4a53a, type: 3}
       propertyPath: maxHealth
@@ -30250,8 +30617,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4292411440
+  m_fontColor: {r: 0.18652506, g: 0, b: 0.8490566, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -31067,6 +31434,7 @@ MonoBehaviour:
   bigAttackRange: 20
   attackSpeed: 1
   maxHealth: 0
+  currentHp: 0
   hpRegen: 0
   crit: 0
   critChance: 0
@@ -31075,8 +31443,8 @@ MonoBehaviour:
   axeSpeed: 0
   pickaxeDamage: 0
   pickaxeSpeed: 0
-  wood: 0
   isMinening: 0
+  isFight: 0
   itemFirstStat: 0
   itemSecondStat: 0
 --- !u!114 &2044254659 stripped
@@ -31471,7 +31839,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2064222870
 Transform:
   m_ObjectHideFlags: 0
@@ -31578,6 +31946,81 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2064222869}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &2074882175
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2074882176}
+  - component: {fileID: 2074882178}
+  - component: {fileID: 2074882177}
+  m_Layer: 0
+  m_Name: ExpBar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2074882176
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2074882175}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 306972086}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 3.7567, y: -0.025391}
+  m_SizeDelta: {x: 617.12, y: 140.91}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2074882177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2074882175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.03137255, g: 0, b: 0.8862746, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &2074882178
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2074882175}
+  m_CullTransparentMesh: 1
 --- !u!1 &2076468298
 GameObject:
   m_ObjectHideFlags: 0
@@ -32372,6 +32815,10 @@ PrefabInstance:
       propertyPath: expForKill
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 5646036886447792721, guid: f86baffa965e59b4290d73b7f2f4a53a, type: 3}
+      propertyPath: moneyForKill
+      value: 5000
+      objectReference: {fileID: 0}
     - target: {fileID: 6908479084238250295, guid: f86baffa965e59b4290d73b7f2f4a53a, type: 3}
       propertyPath: maxHealth
       value: 5000
@@ -32614,6 +33061,7 @@ MonoBehaviour:
   bigAttackRange: 20
   attackSpeed: 1
   maxHealth: 0
+  currentHp: 0
   hpRegen: 0
   crit: 0
   critChance: 0
@@ -32622,8 +33070,8 @@ MonoBehaviour:
   axeSpeed: 0
   pickaxeDamage: 0
   pickaxeSpeed: 0
-  wood: 0
   isMinening: 0
+  isFight: 0
   itemFirstStat: 0
   itemSecondStat: 0
 --- !u!114 &2124406145 stripped
@@ -33051,6 +33499,10 @@ PrefabInstance:
       propertyPath: joystick
       value: 
       objectReference: {fileID: 1185102377}
+    - target: {fileID: 483215433990208521, guid: 51c6f6796b20b33429a8df2d19405dc3, type: 3}
+      propertyPath: maxHealth
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 1453617208888563024, guid: 51c6f6796b20b33429a8df2d19405dc3, type: 3}
       propertyPath: m_Name
       value: Player
@@ -33216,6 +33668,10 @@ PrefabInstance:
       propertyPath: expForKill
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 5646036886447792721, guid: f86baffa965e59b4290d73b7f2f4a53a, type: 3}
+      propertyPath: moneyForKill
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 6604516092685994306, guid: f86baffa965e59b4290d73b7f2f4a53a, type: 3}
       propertyPath: m_Layer
       value: 9
@@ -33325,9 +33781,9 @@ SceneRoots:
   - {fileID: 1395388234}
   - {fileID: 1353091337}
   - {fileID: 1275201701}
+  - {fileID: 577826139}
   - {fileID: 1821493941}
   - {fileID: 1839574616}
   - {fileID: 1009672974}
   - {fileID: 5740344787145867329}
   - {fileID: 2032457804}
-  - {fileID: 577826139}

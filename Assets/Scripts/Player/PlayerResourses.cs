@@ -8,7 +8,7 @@ public class PlayerResources : MonoBehaviour
 {
     public int money;
     public int wood;
-    public int stone;
+    public int metal;
     public int gems;
 
     public TextMeshProUGUI moneyTxt;
@@ -60,11 +60,19 @@ public class PlayerResources : MonoBehaviour
         }
     }
 
+    public void SetParam(PlayerResSave newValue)
+    {
+        money = newValue.money;
+        wood = newValue.wood;
+        metal = newValue.metal;
+        gems = newValue.gems;
+    }
+
     public void ShowRes()
     {
         moneyTxt.text = money.ToString();
         woodTxt.text = wood.ToString();
-        metalTxt.text = stone.ToString();
+        metalTxt.text = metal.ToString();
         gemsTxt.text = gems.ToString();
     }
 

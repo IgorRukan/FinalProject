@@ -1,25 +1,28 @@
+using TMPro;
 using UnityEngine;
 
 public class ExperienceForDeath : MonoBehaviour
 {
     public int expForKill;
 
-    private Experience playerExp;
+    public int moneyForKill;
+
+    public TextMeshProUGUI moneyText;
 
     public void Start()
     {
-        GetComponent<HealthSystem>().Death += Exp;
+        GetComponent<HealthSystem>().Death += EnemyDeath;
     }
 
-    private void Exp(GameObject g)
+    private void EnemyDeath(GameObject g)
     {
-        playerExp = GetComponent<PerceptionComponent>().GetTarget().GetComponent<Experience>();
+        Experience playerExp = ObjectsManager.Instance.player.GetComponent<Experience>();
         playerExp.AddExp(expForKill);
+        
+        ObjectsManager.Instance.player.GetComponent<PlayerResources>().
+            AddOrTakeResourse(PlayerResources.resourses.money, moneyForKill, 1);
 
         ItemDrop itemDrop = GetComponent<ItemDrop>();
         itemDrop.DropItem(transform.position);
-        
-        
-        
     }
 }

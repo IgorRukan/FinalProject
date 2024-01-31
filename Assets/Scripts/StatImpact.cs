@@ -17,7 +17,7 @@ public class StatImpact : MonoBehaviour
             stats = StatManager.Instance.currentStats;
         }
 
-        if (GetComponent<StatManager>())
+        if (GetComponent<BasePlayer>())
         {
             GetComponent<Experience>().LvlUp += LevelUp;
         }
@@ -48,6 +48,11 @@ public class StatImpact : MonoBehaviour
     public void SetAutoHeal()
     {
         hs.AutoHealValue = stats.hpRegen;
+    }
+
+    public float GetMaxHealth()
+    {
+        return stats.currentHp;
     }
 
     public float GetBulletDamage()

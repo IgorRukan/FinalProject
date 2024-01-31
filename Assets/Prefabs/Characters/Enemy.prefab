@@ -324,6 +324,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   expForKill: 10
+  moneyForKill: 0
+  moneyText: {fileID: 8516360169635267362}
 --- !u!114 &764867676509912337
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -883,6 +885,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6290049181305976464, guid: 5d8c7c73363f3b947888a462c98ab5c0, type: 3}
+      propertyPath: m_Name
+      value: RewardText
+      objectReference: {fileID: 0}
     - target: {fileID: 8435946046626128904, guid: 5d8c7c73363f3b947888a462c98ab5c0, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -897,3 +903,14 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5445805066177694051, guid: 5d8c7c73363f3b947888a462c98ab5c0, type: 3}
   m_PrefabInstance: {fileID: 8756698270557730969}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8516360169635267362 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1132157079335451579, guid: 5d8c7c73363f3b947888a462c98ab5c0, type: 3}
+  m_PrefabInstance: {fileID: 8756698270557730969}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
