@@ -6,41 +6,20 @@
   <component name="ChangeListManager">
     <list default="true" id="7d14de2f-65c0-4bbd-85b6-03fd211dc65a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FinalProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FinalProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Move/Ch14_nonPBR@Unarmed Idle.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Move/Ch14_nonPBR@Unarmed Idle.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DataPlayerExp" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DataPlayerExp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DataPlayerStats" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DataPlayerStats.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Canvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Canvas.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Characters/Enemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Characters/Enemy.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Characters/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Characters/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/MineObjects/Tree.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/MineObjects/Tree.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ExperienceForDeath.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ExperienceForDeath.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/HealthSystem/HealthBar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/HealthSystem/HealthBar.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/HealthSystem/HealthSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/HealthSystem/HealthSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MineObjects/TreeMine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/MineObjects/TreeMine.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Experience.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Experience.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerResourses.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerResourses.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Save.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Save.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/SaveManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/SaveManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Stats.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/Stats.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/StatsSave.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/StatsSave.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StatImpact.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StatImpact.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StatManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StatManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/EquipMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/EquipMenu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/InventorySlot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/InventorySlot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/ItemSlotManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/ItemSlotManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Items.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Items.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/ItemsRange/Blue.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/ItemsRange/Blue.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/ItemsRange/Gold.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/ItemsRange/Gold.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/ItemsRange/Green.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/ItemsRange/Green.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/ItemsRange/Grey.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/ItemsRange/Grey.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/ItemsRange/Orange.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/ItemsRange/Orange.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/ItemsRange/Purple.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/ItemsRange/Purple.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Bangers SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Bangers SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ExperienceBar.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ExperienceBar.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ExperienceForDeath.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ExperienceForDeath.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ObjectsManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ObjectsManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Test.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/Test.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/TestSave.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/TestSave.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StatImpact.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StatImpact.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StatManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StatManager.cs.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,6 +166,7 @@
       <workItem from="1706614442126" duration="30714000" />
       <workItem from="1706685049457" duration="25416000" />
       <workItem from="1706713021614" duration="502000" />
+      <workItem from="1706718684046" duration="61000" />
     </task>
     <servers />
   </component>
